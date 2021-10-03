@@ -1,0 +1,3012 @@
+.text:10001000 ;
+.text:10001000 ;
+.text:10001000 ; Input MD5   : AD9935A085295B403122D43035CC7455
+.text:10001000
+.text:10001000 ; File Name   : mom_user_Mazak_Variaxis.dll
+.text:10001000 ; Format	     : Portable	executable for 80386 (PE)
+.text:10001000 ; Imagebase   : 10000000
+.text:10001000 ; Section 1. (virtual address 00001000)
+.text:10001000 ; Virtual size		       : 00001BA4 (   7076.)
+.text:10001000 ; Section size in file	       : 00002000 (   8192.)
+.text:10001000 ; Offset	to raw data for	section: 00001000
+.text:10001000 ; Flags 60000020: Text Executable Readable
+.text:10001000 ; Alignment     : default
+.text:10001000 ; Exported entry	  1. NXSigningResource
+.text:10001000 ; OS type	 :  MS Windows
+.text:10001000 ; Application type:  DLL	32bit
+.text:10001000
+.text:10001000 include uni.inc ; see unicode subdir of ida for info on unicode
+.text:10001000
+.text:10001000 .686p
+.text:10001000 .mmx
+.text:10001000 .model flat
+.text:10001000
+.text:10001000
+.text:10001000 ; Segment type: Pure code
+.text:10001000 ; Segment permissions: Read/Execute
+.text:10001000 _text segment para public 'CODE' use32
+.text:10001000 assume cs:_text
+.text:10001000 ;org 10001000h
+.text:10001000 assume es:nothing, ss:nothing, ds:_data,	fs:nothing, gs:nothing
+.text:10001000
+.text:10001000
+.text:10001000
+.text:10001000 public NXSigningResource
+.text:10001000 NXSigningResource proc near
+.text:10001000 retn
+.text:10001000 NXSigningResource endp
+.text:10001000
+.text:10001001 align 10h
+.text:10001010 ; Exported entry	  2. entry_rtv_mom_cp_part_attr
+.text:10001010
+.text:10001010
+.text:10001010
+.text:10001010 public entry_rtv_mom_cp_part_attr
+.text:10001010 entry_rtv_mom_cp_part_attr proc near
+.text:10001010
+.text:10001010 var_8= dword ptr	-8
+.text:10001010 var_4= dword ptr	-4
+.text:10001010 arg_0= dword ptr	 4
+.text:10001010 arg_4= dword ptr	 8
+.text:10001010
+.text:10001010 sub     esp, 8
+.text:10001013 push    ebx
+.text:10001014 mov     [esp+0Ch+var_8],	0
+.text:1000101C xor     bl, bl
+.text:1000101E call    ds:UF_is_initialized
+.text:10001024 test    eax, eax
+.text:10001026 jnz     short loc_10001034
+.text:10001028 call    ds:UF_initialize
+.text:1000102E test    eax, eax
+.text:10001030 jnz     short loc_1000107F
+.text:10001032 mov     bl, 1
+.text:10001034
+.text:10001034 loc_10001034:
+.text:10001034 push    esi
+.text:10001035 mov     esi, [esp+10h+arg_0]
+.text:10001039 lea     eax, [esp+10h+var_8]
+.text:1000103D push    eax
+.text:1000103E push    esi
+.text:1000103F call    ds:UF_MOM_ask_interp_from_param
+.text:10001045 lea     ecx, [esp+18h+var_4]
+.text:10001049 push    ecx
+.text:1000104A push    esi
+.text:1000104B call    ds:UF_MOM_ask_mom
+.text:10001051 mov     edx, [esp+20h+var_4]
+.text:10001055 push    offset sub_10001090
+.text:1000105A push    offset aExtn_rtv_mom_c ;	"EXTN_rtv_mom_cp_part_attr"
+.text:1000105F push    edx
+.text:10001060 call    ds:UF_MOM_extend_xlator
+.text:10001066 mov     eax, [esp+2Ch+arg_4]
+.text:1000106A add     esp, 1Ch
+.text:1000106D cmp     bl, 1
+.text:10001070 mov     dword ptr [eax],	0
+.text:10001076 pop     esi
+.text:10001077 jnz     short loc_1000107F
+.text:10001079 call    ds:UF_terminate
+.text:1000107F
+.text:1000107F loc_1000107F:
+.text:1000107F pop     ebx
+.text:10001080 add     esp, 8
+.text:10001083 retn
+.text:10001083 entry_rtv_mom_cp_part_attr endp
+.text:10001083
+.text:10001084 align 10h
+.text:10001090
+.text:10001090
+.text:10001090 ; Attributes: bp-based frame
+.text:10001090
+.text:10001090 sub_10001090 proc near
+.text:10001090
+.text:10001090 var_248=	qword ptr -248h
+.text:10001090 var_231=	byte ptr -231h
+.text:10001090 var_230=	qword ptr -230h
+.text:10001090 var_228=	qword ptr -228h
+.text:10001090 var_220=	qword ptr -220h
+.text:10001090 var_218=	qword ptr -218h
+.text:10001090 var_210=	qword ptr -210h
+.text:10001090 var_204=	qword ptr -204h
+.text:10001090 var_1FC=	qword ptr -1FCh
+.text:10001090 var_1EC=	dword ptr -1ECh
+.text:10001090 var_1E8=	qword ptr -1E8h
+.text:10001090 var_1E0=	dword ptr -1E0h
+.text:10001090 String= dword ptr -1DCh
+.text:10001090 var_1D8=	dword ptr -1D8h
+.text:10001090 var_1D4=	dword ptr -1D4h
+.text:10001090 var_1D0=	qword ptr -1D0h
+.text:10001090 var_1C0=	dword ptr -1C0h
+.text:10001090 var_1BC=	dword ptr -1BCh
+.text:10001090 var_1B8=	dword ptr -1B8h
+.text:10001090 var_1B4=	dword ptr -1B4h
+.text:10001090 var_1B0=	dword ptr -1B0h
+.text:10001090 var_1AC=	dword ptr -1ACh
+.text:10001090 var_1A8=	dword ptr -1A8h
+.text:10001090 var_1A4=	dword ptr -1A4h
+.text:10001090 var_1A0=	dword ptr -1A0h
+.text:10001090 var_19C=	word ptr -19Ch
+.text:10001090 var_19A=	dword ptr -19Ah
+.text:10001090 var_196=	dword ptr -196h
+.text:10001090 var_192=	word ptr -192h
+.text:10001090 var_190=	dword ptr -190h
+.text:10001090 var_18C=	dword ptr -18Ch
+.text:10001090 var_188=	byte ptr -188h
+.text:10001090 var_187=	dword ptr -187h
+.text:10001090 var_183=	word ptr -183h
+.text:10001090 var_181=	byte ptr -181h
+.text:10001090 Dest= byte ptr -180h
+.text:10001090 var_54= qword ptr -54h
+.text:10001090 var_4C= qword ptr -4Ch
+.text:10001090 var_44= qword ptr -44h
+.text:10001090 var_3C= qword ptr -3Ch
+.text:10001090 var_34= qword ptr -34h
+.text:10001090 var_2C= qword ptr -2Ch
+.text:10001090 var_24= byte ptr	-24h
+.text:10001090 arg_0= dword ptr	 8
+.text:10001090 arg_8= dword ptr	 10h
+.text:10001090 arg_C= dword ptr	 14h
+.text:10001090
+.text:10001090 push    ebp
+.text:10001091 mov     ebp, esp
+.text:10001093 and     esp, 0FFFFFFF8h
+.text:10001096 sub     esp, 234h
+.text:1000109C mov     eax, dword_10005298
+.text:100010A1 mov     cx, word_1000529C
+.text:100010A8 mov     [esp+234h+var_1A0], eax
+.text:100010AF mov     eax, dword_1000528C
+.text:100010B4 xor     edx, edx
+.text:100010B6 mov     [esp+234h+var_190], eax
+.text:100010BD mov     [esp+234h+var_19A], edx
+.text:100010C4 xor     eax, eax
+.text:100010C6 mov     [esp+234h+var_196], edx
+.text:100010CD push    ebx
+.text:100010CE mov     [esp+238h+var_187], eax
+.text:100010D5 push    esi
+.text:100010D6 mov     [esp+23Ch+var_19C], cx
+.text:100010DE mov     ecx, dword_10005290
+.text:100010E4 mov     [esp+23Ch+var_192], dx
+.text:100010EC mov     dl, byte_10005294
+.text:100010F2 mov     esi, 1
+.text:100010F7 mov     [esp+23Ch+var_183], ax
+.text:100010FF push    edi
+.text:10001100 mov     [esp+240h+var_1B0], esi
+.text:10001107 mov     [esp+240h+var_1AC], esi
+.text:1000110E mov     [esp+240h+var_1A8], esi
+.text:10001115 mov     [esp+240h+var_1A4], esi
+.text:1000111C mov     [esp+240h+var_1C0], 0
+.text:10001127 mov     [esp+240h+var_1BC], 40590000h
+.text:10001132 mov     [esp+240h+var_1B8], 0
+.text:1000113D mov     [esp+240h+var_1B4], 40240000h
+.text:10001148 mov     [esp+240h+var_18C], ecx
+.text:1000114F mov     [esp+240h+var_188], dl
+.text:10001156 mov     [esp+240h+var_181], al
+.text:1000115D call    sub_10002920
+.text:10001162 cmp     eax, esi
+.text:10001164 jz      short loc_1000118A
+.text:10001166 push    0
+.text:10001168 push    offset dword_10005198
+.text:1000116D push    offset aAsRasx  ; "Внимание!"
+.text:10001172 call    ds:UF_UI_display_nonmodal_msg
+.text:10001178 add     esp, 0Ch
+.text:1000117B call    ds:UF_terminate
+.text:10001181 xor     eax, eax
+.text:10001183 pop     edi
+.text:10001184 pop     esi
+.text:10001185 pop     ebx
+.text:10001186 mov     esp, ebp
+.text:10001188 pop     ebp
+.text:10001189 retn
+.text:1000118A
+.text:1000118A loc_1000118A:
+.text:1000118A mov     edi, [ebp+arg_8]
+.text:1000118D mov     ebx, ds:sprintf
+.text:10001193 push    edi
+.text:10001194 lea     ecx, [esp+244h+Dest]
+.text:1000119B push    offset Format   ; "Number of args %ld"
+.text:100011A0 push    ecx	       ; Dest
+.text:100011A1 call    ebx ; sprintf
+.text:100011A3 add     esp, 0Ch
+.text:100011A6 test    edi, edi
+.text:100011A8 jle     short loc_100011C8
+.text:100011AA mov     esi, [ebp+arg_C]
+.text:100011AD
+.text:100011AD loc_100011AD:
+.text:100011AD mov     edx, [esi]
+.text:100011AF lea     eax, [esp+240h+Dest]
+.text:100011B6 push    edx
+.text:100011B7 push    offset aArg0S   ; "Arg 0	%s"
+.text:100011BC push    eax	       ; Dest
+.text:100011BD call    ebx ; sprintf
+.text:100011BF add     esp, 0Ch
+.text:100011C2 add     esi, 4
+.text:100011C5 dec     edi
+.text:100011C6 jnz     short loc_100011AD
+.text:100011C8
+.text:100011C8 loc_100011C8:
+.text:100011C8 mov     ecx, [ebp+arg_C]
+.text:100011CB mov     esi, offset aPlane_vortex ; "PLANE_VORTEX"
+.text:100011D0 mov     eax, [ecx+4]
+.text:100011D3
+.text:100011D3 loc_100011D3:
+.text:100011D3 mov     dl, [eax]
+.text:100011D5 mov     bl, [esi]
+.text:100011D7 mov     cl, dl
+.text:100011D9 cmp     dl, bl
+.text:100011DB jnz     short loc_100011FB
+.text:100011DD test    cl, cl
+.text:100011DF jz      short loc_100011F7
+.text:100011E1 mov     dl, [eax+1]
+.text:100011E4 mov     bl, [esi+1]
+.text:100011E7 mov     cl, dl
+.text:100011E9 cmp     dl, bl
+.text:100011EB jnz     short loc_100011FB
+.text:100011ED add     eax, 2
+.text:100011F0 add     esi, 2
+.text:100011F3 test    cl, cl
+.text:100011F5 jnz     short loc_100011D3
+.text:100011F7
+.text:100011F7 loc_100011F7:
+.text:100011F7 xor     eax, eax
+.text:100011F9 jmp     short loc_10001200
+.text:100011FB
+.text:100011FB loc_100011FB:
+.text:100011FB sbb     eax, eax
+.text:100011FD sbb     eax, 0FFFFFFFFh
+.text:10001200
+.text:10001200 loc_10001200:
+.text:10001200 mov     esi, [ebp+arg_0]
+.text:10001203 mov     edi, ds:UF_MOM_ask_assoc_double_array
+.text:10001209 mov     ebx, ds:UF_MOM_execute_command
+.text:1000120F test    eax, eax
+.text:10001211 jnz     loc_100013AD
+.text:10001217 lea     eax, [esp+240h+var_204]
+.text:1000121B push    eax
+.text:1000121C push    offset a0       ; "0"
+.text:10001221 push    offset aOut_angle_pos ; "out_angle_pos"
+.text:10001226 push    esi
+.text:10001227 call    edi ; UF_MOM_ask_assoc_double_array
+.text:10001229 lea     ecx, [esp+250h+var_1FC]
+.text:1000122D push    ecx
+.text:1000122E push    offset a1       ; "1"
+.text:10001233 push    offset aOut_angle_pos ; "out_angle_pos"
+.text:10001238 push    esi
+.text:10001239 call    edi ; UF_MOM_ask_assoc_double_array
+.text:1000123B lea     edx, [esp+260h+var_228]
+.text:1000123F push    edx
+.text:10001240 push    offset a0       ; "0"
+.text:10001245 push    offset aMcs_goto	; "mcs_goto"
+.text:1000124A push    esi
+.text:1000124B call    edi ; UF_MOM_ask_assoc_double_array
+.text:1000124D lea     eax, [esp+270h+var_220]
+.text:10001251 push    eax
+.text:10001252 push    offset a1       ; "1"
+.text:10001257 push    offset aMcs_goto	; "mcs_goto"
+.text:1000125C push    esi
+.text:1000125D call    edi ; UF_MOM_ask_assoc_double_array
+.text:1000125F add     esp, 40h
+.text:10001262 lea     ecx, [esp+240h+var_218]
+.text:10001266 push    ecx
+.text:10001267 push    offset a2       ; "2"
+.text:1000126C push    offset aMcs_goto	; "mcs_goto"
+.text:10001271 push    esi
+.text:10001272 call    edi ; UF_MOM_ask_assoc_double_array
+.text:10001274 fld     [esp+250h+var_1FC]
+.text:10001278 fmul    ds:dbl_10003090
+.text:1000127E add     esp, 8
+.text:10001281 lea     edx, [esp+248h+Dest]
+.text:10001288 fld     st
+.text:1000128A fcos
+.text:1000128C fstp    [esp+248h+var_1E8]
+.text:10001290 fld     [esp+248h+var_204]
+.text:10001294 fmul    ds:dbl_10003090
+.text:1000129A fld     st
+.text:1000129C fsin
+.text:1000129E fstp    [esp+248h+var_230]
+.text:100012A2 fcos
+.text:100012A4 fstp    [esp+248h+var_210]
+.text:100012A8 fsin
+.text:100012AA fstp    [esp+248h+var_248]
+.text:100012AD push    offset aMom_output_lit ;	"MOM_output_literal \"\\043600=\\133\\133\\04"...
+.text:100012B2 push    edx	       ; Dest
+.text:100012B3 call    ds:sprintf
+.text:100012B9 lea     eax, [esp+250h+Dest]
+.text:100012C0 push    eax
+.text:100012C1 push    esi
+.text:100012C2 call    ebx ; UF_MOM_execute_command
+.text:100012C4 mov     ecx, dword ptr [esp+258h+var_1E8+4]
+.text:100012C8 mov     edx, dword ptr [esp+258h+var_1E8]
+.text:100012CC push    ecx
+.text:100012CD push    edx
+.text:100012CE lea     eax, [esp+260h+Dest]
+.text:100012D5 push    offset aMom_output_l_0 ;	"MOM_output_literal \"\\043601=\\133\\133\\04"...
+.text:100012DA push    eax	       ; Dest
+.text:100012DB call    ds:sprintf
+.text:100012E1 lea     ecx, [esp+268h+Dest]
+.text:100012E8 push    ecx
+.text:100012E9 push    esi
+.text:100012EA call    ebx ; UF_MOM_execute_command
+.text:100012EC mov     edx, dword ptr [esp+270h+var_230+4]
+.text:100012F0 mov     eax, dword ptr [esp+270h+var_230]
+.text:100012F4 push    edx
+.text:100012F5 push    eax
+.text:100012F6 lea     ecx, [esp+278h+Dest]
+.text:100012FD push    offset aMom_output_l_1 ;	"MOM_output_literal \"\\043602=\\133\\133\\04"...
+.text:10001302 push    ecx	       ; Dest
+.text:10001303 call    ds:sprintf
+.text:10001309 add     esp, 40h
+.text:1000130C lea     edx, [esp+240h+Dest]
+.text:10001313 push    edx
+.text:10001314 push    esi
+.text:10001315 call    ebx ; UF_MOM_execute_command
+.text:10001317 mov     eax, dword ptr [esp+248h+var_210+4]
+.text:1000131B mov     ecx, dword ptr [esp+248h+var_210]
+.text:1000131F push    eax
+.text:10001320 push    ecx
+.text:10001321 lea     edx, [esp+250h+Dest]
+.text:10001328 push    offset aMom_output_l_2 ;	"MOM_output_literal \"\\043603=\\133\\133\\04"...
+.text:1000132D push    edx	       ; Dest
+.text:1000132E call    ds:sprintf
+.text:10001334 lea     eax, [esp+258h+Dest]
+.text:1000133B push    eax
+.text:1000133C push    esi
+.text:1000133D call    ebx ; UF_MOM_execute_command
+.text:1000133F mov     ecx, dword ptr [esp+260h+var_1FC+4]
+.text:10001343 mov     edx, dword ptr [esp+260h+var_1FC]
+.text:10001347 push    ecx
+.text:10001348 push    edx
+.text:10001349 lea     eax, [esp+268h+Dest]
+.text:10001350 push    offset aMom_output_l_3 ;	"MOM_output_literal \"G68 X\\133\\043600\\13"...
+.text:10001355 push    eax	       ; Dest
+.text:10001356 call    ds:sprintf
+.text:1000135C lea     ecx, [esp+270h+Dest]
+.text:10001363 push    ecx
+.text:10001364 push    esi
+.text:10001365 call    ebx ; UF_MOM_execute_command
+.text:10001367 lea     edx, [esp+278h+var_220]
+.text:1000136B push    edx
+.text:1000136C push    offset a1       ; "1"
+.text:10001371 push    offset aPos     ; "pos"
+.text:10001376 push    esi
+.text:10001377 call    edi ; UF_MOM_ask_assoc_double_array
+.text:10001379 mov     eax, dword ptr [esp+288h+var_204+4]
+.text:10001380 mov     ecx, dword ptr [esp+288h+var_204]
+.text:10001387 add     esp, 48h
+.text:1000138A lea     edx, [esp+240h+Dest]
+.text:10001391 push    eax
+.text:10001392 push    ecx
+.text:10001393 push    offset aMom_output_l_4 ;	"MOM_output_literal \"G68 X0 Y\\133-\\04360"...
+.text:10001398 push    edx	       ; Dest
+.text:10001399 call    ds:sprintf
+.text:1000139F lea     eax, [esp+250h+Dest]
+.text:100013A6 push    eax
+.text:100013A7 push    esi
+.text:100013A8 call    ebx ; UF_MOM_execute_command
+.text:100013AA add     esp, 18h
+.text:100013AD
+.text:100013AD loc_100013AD:
+.text:100013AD mov     ecx, [ebp+arg_C]
+.text:100013B0 mov     dword ptr [esp+240h+var_210], offset aG43_move_vorte ; "G43_MOVE_VORTEX"
+.text:100013B8 mov     eax, [ecx+4]
+.text:100013BB
+.text:100013BB loc_100013BB:
+.text:100013BB mov     dl, [eax]
+.text:100013BD mov     ecx, dword ptr [esp+240h+var_210]
+.text:100013C1 mov     [esp+240h+var_231], dl
+.text:100013C5 cmp     dl, [ecx]
+.text:100013C7 jnz     short loc_100013F7
+.text:100013C9 mov     cl, dl
+.text:100013CB test    cl, cl
+.text:100013CD jz      short loc_100013F3
+.text:100013CF mov     dl, [eax+1]
+.text:100013D2 mov     ecx, dword ptr [esp+240h+var_210]
+.text:100013D6 mov     [esp+240h+var_231], dl
+.text:100013DA cmp     dl, [ecx+1]
+.text:100013DD jnz     short loc_100013F7
+.text:100013DF mov     edx, ecx
+.text:100013E1 mov     cl, [esp+240h+var_231]
+.text:100013E5 add     eax, 2
+.text:100013E8 add     edx, 2
+.text:100013EB test    cl, cl
+.text:100013ED mov     dword ptr [esp+240h+var_210], edx
+.text:100013F1 jnz     short loc_100013BB
+.text:100013F3
+.text:100013F3 loc_100013F3:
+.text:100013F3 xor     eax, eax
+.text:100013F5 jmp     short loc_100013FC
+.text:100013F7
+.text:100013F7 loc_100013F7:
+.text:100013F7 sbb     eax, eax
+.text:100013F9 sbb     eax, 0FFFFFFFFh
+.text:100013FC
+.text:100013FC loc_100013FC:
+.text:100013FC test    eax, eax
+.text:100013FE jnz     loc_10001521
+.text:10001404 lea     edx, [esp+240h+var_204]
+.text:10001408 push    edx
+.text:10001409 push    offset a0       ; "0"
+.text:1000140E push    offset aOut_angle_pos ; "out_angle_pos"
+.text:10001413 push    esi
+.text:10001414 call    edi ; UF_MOM_ask_assoc_double_array
+.text:10001416 lea     eax, [esp+250h+var_1FC]
+.text:1000141A push    eax
+.text:1000141B push    offset a1       ; "1"
+.text:10001420 push    offset aOut_angle_pos ; "out_angle_pos"
+.text:10001425 push    esi
+.text:10001426 call    edi ; UF_MOM_ask_assoc_double_array
+.text:10001428 lea     ecx, [esp+260h+var_228]
+.text:1000142C push    ecx
+.text:1000142D push    offset a0       ; "0"
+.text:10001432 push    offset aMcs_goto	; "mcs_goto"
+.text:10001437 push    esi
+.text:10001438 call    edi ; UF_MOM_ask_assoc_double_array
+.text:1000143A lea     edx, [esp+270h+var_220]
+.text:1000143E push    edx
+.text:1000143F push    offset a1       ; "1"
+.text:10001444 push    offset aMcs_goto	; "mcs_goto"
+.text:10001449 push    esi
+.text:1000144A call    edi ; UF_MOM_ask_assoc_double_array
+.text:1000144C add     esp, 40h
+.text:1000144F lea     eax, [esp+240h+var_218]
+.text:10001453 push    eax
+.text:10001454 push    offset a2       ; "2"
+.text:10001459 push    offset aMcs_goto	; "mcs_goto"
+.text:1000145E push    esi
+.text:1000145F call    edi ; UF_MOM_ask_assoc_double_array
+.text:10001461 lea     ecx, [esp+250h+String]
+.text:10001465 push    ecx
+.text:10001466 push    offset aTool_number ; "tool_number"
+.text:1000146B push    esi
+.text:1000146C call    ds:UF_MOM_ask_string
+.text:10001472 mov     edx, [esp+25Ch+String]
+.text:10001479 push    edx	       ; String
+.text:1000147A call    ds:atof
+.text:10001480 call    _ftol
+.text:10001485 mov     ecx, dword ptr [esp+260h+var_220]
+.text:10001489 mov     edx, dword ptr [esp+260h+var_228+4]
+.text:1000148D mov     dword ptr [esp+260h+var_210], eax
+.text:10001491 push    eax
+.text:10001492 mov     eax, dword ptr [esp+264h+var_220+4]
+.text:10001496 push    eax
+.text:10001497 mov     eax, dword ptr [esp+268h+var_228]
+.text:1000149B push    ecx
+.text:1000149C push    edx
+.text:1000149D push    eax
+.text:1000149E lea     ecx, [esp+274h+Dest]
+.text:100014A5 push    offset aMom_output_l_5 ;	"MOM_output_literal \"G43.4 G0 X%.3lf Y%."...
+.text:100014AA push    ecx	       ; Dest
+.text:100014AB call    ds:sprintf
+.text:100014B1 lea     edx, [esp+27Ch+Dest]
+.text:100014B8 push    edx
+.text:100014B9 push    esi
+.text:100014BA call    ebx ; UF_MOM_execute_command
+.text:100014BC add     esp, 44h
+.text:100014BF lea     eax, [esp+240h+Dest]
+.text:100014C6 push    offset aMom_output_l_6 ;	"MOM_output_literal \"G49\""
+.text:100014CB push    eax	       ; Dest
+.text:100014CC call    ds:sprintf
+.text:100014D2 lea     ecx, [esp+248h+Dest]
+.text:100014D9 push    ecx
+.text:100014DA push    esi
+.text:100014DB call    ebx ; UF_MOM_execute_command
+.text:100014DD mov     edx, dword ptr [esp+250h+var_210]
+.text:100014E1 lea     eax, [esp+250h+Dest]
+.text:100014E8 push    edx
+.text:100014E9 push    offset aMom_output_l_7 ;	"MOM_output_literal \"G43 G91 Z0 H%.d\""
+.text:100014EE push    eax	       ; Dest
+.text:100014EF call    ds:sprintf
+.text:100014F5 lea     ecx, [esp+25Ch+Dest]
+.text:100014FC push    ecx
+.text:100014FD push    esi
+.text:100014FE call    ebx ; UF_MOM_execute_command
+.text:10001500 lea     edx, [esp+264h+Dest]
+.text:10001507 push    offset aMom_output_l_8 ;	"MOM_output_literal \"G90\""
+.text:1000150C push    edx	       ; Dest
+.text:1000150D call    ds:sprintf
+.text:10001513 lea     eax, [esp+26Ch+Dest]
+.text:1000151A push    eax
+.text:1000151B push    esi
+.text:1000151C call    ebx ; UF_MOM_execute_command
+.text:1000151E add     esp, 34h
+.text:10001521
+.text:10001521 loc_10001521:
+.text:10001521 mov     ecx, [ebp+arg_C]
+.text:10001524 mov     dword ptr [esp+240h+var_230], offset aG43_move_vor_0 ; "G43_MOVE_VORTEX_%"
+.text:1000152C mov     eax, [ecx+4]
+.text:1000152F
+.text:1000152F loc_1000152F:
+.text:1000152F mov     dl, [eax]
+.text:10001531 mov     ecx, dword ptr [esp+240h+var_230]
+.text:10001535 mov     [esp+240h+var_231], dl
+.text:10001539 cmp     dl, [ecx]
+.text:1000153B jnz     short loc_1000156B
+.text:1000153D mov     cl, dl
+.text:1000153F test    cl, cl
+.text:10001541 jz      short loc_10001567
+.text:10001543 mov     dl, [eax+1]
+.text:10001546 mov     ecx, dword ptr [esp+240h+var_230]
+.text:1000154A mov     [esp+240h+var_231], dl
+.text:1000154E cmp     dl, [ecx+1]
+.text:10001551 jnz     short loc_1000156B
+.text:10001553 mov     edx, ecx
+.text:10001555 mov     cl, [esp+240h+var_231]
+.text:10001559 add     eax, 2
+.text:1000155C add     edx, 2
+.text:1000155F test    cl, cl
+.text:10001561 mov     dword ptr [esp+240h+var_230], edx
+.text:10001565 jnz     short loc_1000152F
+.text:10001567
+.text:10001567 loc_10001567:
+.text:10001567 xor     eax, eax
+.text:10001569 jmp     short loc_10001570
+.text:1000156B
+.text:1000156B loc_1000156B:
+.text:1000156B sbb     eax, eax
+.text:1000156D sbb     eax, 0FFFFFFFFh
+.text:10001570
+.text:10001570 loc_10001570:
+.text:10001570 test    eax, eax
+.text:10001572 jnz     loc_1000162D
+.text:10001578 lea     edx, [esp+240h+var_204]
+.text:1000157C push    edx
+.text:1000157D push    offset a0       ; "0"
+.text:10001582 push    offset aOut_angle_pos ; "out_angle_pos"
+.text:10001587 push    esi
+.text:10001588 call    edi ; UF_MOM_ask_assoc_double_array
+.text:1000158A lea     eax, [esp+250h+var_1FC]
+.text:1000158E push    eax
+.text:1000158F push    offset a1       ; "1"
+.text:10001594 push    offset aOut_angle_pos ; "out_angle_pos"
+.text:10001599 push    esi
+.text:1000159A call    edi ; UF_MOM_ask_assoc_double_array
+.text:1000159C lea     ecx, [esp+260h+var_1D8]
+.text:100015A3 push    ecx
+.text:100015A4 push    offset a0       ; "0"
+.text:100015A9 push    offset aPrev_out_angle ;	"prev_out_angle_pos"
+.text:100015AE push    esi
+.text:100015AF call    edi ; UF_MOM_ask_assoc_double_array
+.text:100015B1 lea     edx, [esp+270h+var_1D0]
+.text:100015B8 push    edx
+.text:100015B9 push    offset a1       ; "1"
+.text:100015BE push    offset aPrev_out_angle ;	"prev_out_angle_pos"
+.text:100015C3 push    esi
+.text:100015C4 call    edi ; UF_MOM_ask_assoc_double_array
+.text:100015C6 add     esp, 40h
+.text:100015C9 lea     eax, [esp+240h+var_228]
+.text:100015CD push    eax
+.text:100015CE push    offset a0       ; "0"
+.text:100015D3 push    offset aPos     ; "pos"
+.text:100015D8 push    esi
+.text:100015D9 call    edi ; UF_MOM_ask_assoc_double_array
+.text:100015DB lea     ecx, [esp+250h+var_220]
+.text:100015DF push    ecx
+.text:100015E0 push    offset a1       ; "1"
+.text:100015E5 push    offset aPos     ; "pos"
+.text:100015EA push    esi
+.text:100015EB call    edi ; UF_MOM_ask_assoc_double_array
+.text:100015ED lea     edx, [esp+260h+var_218]
+.text:100015F1 push    edx
+.text:100015F2 push    offset a2       ; "2"
+.text:100015F7 push    offset aPos     ; "pos"
+.text:100015FC push    esi
+.text:100015FD call    edi ; UF_MOM_ask_assoc_double_array
+.text:100015FF lea     eax, [esp+270h+var_1EC]
+.text:10001606 push    eax
+.text:10001607 push    offset aP_num   ; "P_num"
+.text:1000160C push    esi
+.text:1000160D call    ds:UF_MOM_ask_string
+.text:10001613 mov     ecx, [esp+27Ch+var_1EC]
+.text:1000161A push    ecx	       ; String
+.text:1000161B call    ds:atof
+.text:10001621 add     esp, 40h
+.text:10001624 call    _ftol
+.text:10001629 mov     dword ptr [esp+240h+var_210], eax
+.text:1000162D
+.text:1000162D loc_1000162D:
+.text:1000162D mov     edx, [ebp+arg_C]
+.text:10001630 mov     dword ptr [esp+240h+var_230], offset aPlane ; "PLANE"
+.text:10001638 mov     eax, [edx+4]
+.text:1000163B
+.text:1000163B loc_1000163B:
+.text:1000163B mov     cl, [eax]
+.text:1000163D mov     edx, dword ptr [esp+240h+var_230]
+.text:10001641 mov     [esp+240h+var_231], cl
+.text:10001645 cmp     cl, [edx]
+.text:10001647 jnz     short loc_1000166B
+.text:10001649 test    cl, cl
+.text:1000164B jz      short loc_10001667
+.text:1000164D mov     cl, [eax+1]
+.text:10001650 mov     [esp+240h+var_231], cl
+.text:10001654 cmp     cl, [edx+1]
+.text:10001657 jnz     short loc_1000166B
+.text:10001659 add     eax, 2
+.text:1000165C add     edx, 2
+.text:1000165F test    cl, cl
+.text:10001661 mov     dword ptr [esp+240h+var_230], edx
+.text:10001665 jnz     short loc_1000163B
+.text:10001667
+.text:10001667 loc_10001667:
+.text:10001667 xor     eax, eax
+.text:10001669 jmp     short loc_10001670
+.text:1000166B
+.text:1000166B loc_1000166B:
+.text:1000166B sbb     eax, eax
+.text:1000166D sbb     eax, 0FFFFFFFFh
+.text:10001670
+.text:10001670 loc_10001670:
+.text:10001670 test    eax, eax
+.text:10001672 jnz     loc_1000171B
+.text:10001678 lea     eax, [esp+240h+var_204]
+.text:1000167C push    eax
+.text:1000167D push    offset a0       ; "0"
+.text:10001682 push    offset aOut_angle_pos ; "out_angle_pos"
+.text:10001687 push    esi
+.text:10001688 call    edi ; UF_MOM_ask_assoc_double_array
+.text:1000168A lea     ecx, [esp+250h+var_1FC]
+.text:1000168E push    ecx
+.text:1000168F push    offset a1       ; "1"
+.text:10001694 push    offset aOut_angle_pos ; "out_angle_pos"
+.text:10001699 push    esi
+.text:1000169A call    edi ; UF_MOM_ask_assoc_double_array
+.text:1000169C lea     edx, [esp+260h+var_1D8]
+.text:100016A3 push    edx
+.text:100016A4 push    offset a0       ; "0"
+.text:100016A9 push    offset aPrev_out_angle ;	"prev_out_angle_pos"
+.text:100016AE push    esi
+.text:100016AF call    edi ; UF_MOM_ask_assoc_double_array
+.text:100016B1 lea     eax, [esp+270h+var_1D0]
+.text:100016B8 push    eax
+.text:100016B9 push    offset a1       ; "1"
+.text:100016BE push    offset aPrev_out_angle ;	"prev_out_angle_pos"
+.text:100016C3 push    esi
+.text:100016C4 call    edi ; UF_MOM_ask_assoc_double_array
+.text:100016C6 mov     ecx, dword ptr [esp+280h+var_1D0+4]
+.text:100016CD mov     edx, dword ptr [esp+280h+var_1D0]
+.text:100016D4 mov     eax, [esp+280h+var_1D4]
+.text:100016DB add     esp, 40h
+.text:100016DE push    ecx
+.text:100016DF mov     ecx, [esp+244h+var_1D8]
+.text:100016E3 push    edx
+.text:100016E4 mov     edx, dword ptr [esp+248h+var_1FC+4]
+.text:100016E8 push    eax
+.text:100016E9 mov     eax, dword ptr [esp+24Ch+var_1FC]
+.text:100016ED push    ecx
+.text:100016EE mov     ecx, dword ptr [esp+250h+var_204+4]
+.text:100016F2 push    edx
+.text:100016F3 mov     edx, dword ptr [esp+254h+var_204]
+.text:100016F7 push    eax
+.text:100016F8 push    ecx
+.text:100016F9 push    edx
+.text:100016FA lea     eax, [esp+260h+Dest]
+.text:10001701 push    offset aMom_output_l_9 ;	"MOM_output_literal \"G65 P2223	A%.3lf C%"...
+.text:10001706 push    eax	       ; Dest
+.text:10001707 call    ds:sprintf
+.text:1000170D lea     ecx, [esp+268h+Dest]
+.text:10001714 push    ecx
+.text:10001715 push    esi
+.text:10001716 call    ebx ; UF_MOM_execute_command
+.text:10001718 add     esp, 30h
+.text:1000171B
+.text:1000171B loc_1000171B:
+.text:1000171B mov     edx, [ebp+arg_C]
+.text:1000171E mov     dword ptr [esp+240h+var_230], offset aPlane_dynamic ; "PLANE_dynamic"
+.text:10001726 mov     eax, [edx+4]
+.text:10001729
+.text:10001729 loc_10001729:
+.text:10001729 mov     cl, [eax]
+.text:1000172B mov     edx, dword ptr [esp+240h+var_230]
+.text:1000172F mov     [esp+240h+var_231], cl
+.text:10001733 cmp     cl, [edx]
+.text:10001735 jnz     short loc_10001759
+.text:10001737 test    cl, cl
+.text:10001739 jz      short loc_10001755
+.text:1000173B mov     cl, [eax+1]
+.text:1000173E mov     [esp+240h+var_231], cl
+.text:10001742 cmp     cl, [edx+1]
+.text:10001745 jnz     short loc_10001759
+.text:10001747 add     eax, 2
+.text:1000174A add     edx, 2
+.text:1000174D test    cl, cl
+.text:1000174F mov     dword ptr [esp+240h+var_230], edx
+.text:10001753 jnz     short loc_10001729
+.text:10001755
+.text:10001755 loc_10001755:
+.text:10001755 xor     eax, eax
+.text:10001757 jmp     short loc_1000175E
+.text:10001759
+.text:10001759 loc_10001759:
+.text:10001759 sbb     eax, eax
+.text:1000175B sbb     eax, 0FFFFFFFFh
+.text:1000175E
+.text:1000175E loc_1000175E:
+.text:1000175E test    eax, eax
+.text:10001760 jnz     loc_10001812
+.text:10001766 lea     eax, [esp+240h+var_204]
+.text:1000176A push    eax
+.text:1000176B push    offset a0       ; "0"
+.text:10001770 push    offset aOut_angle_pos ; "out_angle_pos"
+.text:10001775 push    esi
+.text:10001776 call    edi ; UF_MOM_ask_assoc_double_array
+.text:10001778 lea     ecx, [esp+250h+var_1FC]
+.text:1000177C push    ecx
+.text:1000177D push    offset a1       ; "1"
+.text:10001782 push    offset aOut_angle_pos ; "out_angle_pos"
+.text:10001787 push    esi
+.text:10001788 call    edi ; UF_MOM_ask_assoc_double_array
+.text:1000178A lea     edx, [esp+260h+var_1D8]
+.text:10001791 push    edx
+.text:10001792 push    offset a0       ; "0"
+.text:10001797 push    offset aPrev_out_angle ;	"prev_out_angle_pos"
+.text:1000179C push    esi
+.text:1000179D call    edi ; UF_MOM_ask_assoc_double_array
+.text:1000179F lea     eax, [esp+270h+var_1D0]
+.text:100017A6 push    eax
+.text:100017A7 push    offset a1       ; "1"
+.text:100017AC push    offset aPrev_out_angle ;	"prev_out_angle_pos"
+.text:100017B1 push    esi
+.text:100017B2 call    edi ; UF_MOM_ask_assoc_double_array
+.text:100017B4 add     esp, 40h
+.text:100017B7 lea     ecx, [esp+240h+var_1EC]
+.text:100017BB push    ecx
+.text:100017BC push    offset aP_num   ; "P_num"
+.text:100017C1 push    esi
+.text:100017C2 call    ds:UF_MOM_ask_string
+.text:100017C8 mov     edx, [esp+24Ch+var_1EC]
+.text:100017CC push    edx	       ; String
+.text:100017CD call    ds:atof
+.text:100017D3 call    _ftol
+.text:100017D8 mov     ecx, dword ptr [esp+250h+var_1FC]
+.text:100017DC mov     edx, dword ptr [esp+250h+var_204+4]
+.text:100017E0 mov     dword ptr [esp+250h+var_210], eax
+.text:100017E4 push    eax
+.text:100017E5 mov     eax, dword ptr [esp+254h+var_1FC+4]
+.text:100017E9 push    eax
+.text:100017EA mov     eax, dword ptr [esp+258h+var_204]
+.text:100017EE push    ecx
+.text:100017EF push    edx
+.text:100017F0 push    eax
+.text:100017F1 lea     ecx, [esp+264h+Dest]
+.text:100017F8 push    offset aMom_output__10 ;	"MOM_output_literal \"G128 A%.3lf C%.3lf "...
+.text:100017FD push    ecx	       ; Dest
+.text:100017FE call    ds:sprintf
+.text:10001804 lea     edx, [esp+26Ch+Dest]
+.text:1000180B push    edx
+.text:1000180C push    esi
+.text:1000180D call    ebx ; UF_MOM_execute_command
+.text:1000180F add     esp, 34h
+.text:10001812
+.text:10001812 loc_10001812:
+.text:10001812 mov     eax, [ebp+arg_C]
+.text:10001815 mov     dword ptr [esp+240h+var_230], offset aG43_move ;	"G43_MOVE"
+.text:1000181D mov     eax, [eax+4]
+.text:10001820
+.text:10001820 loc_10001820:
+.text:10001820 mov     cl, [eax]
+.text:10001822 mov     edx, dword ptr [esp+240h+var_230]
+.text:10001826 mov     [esp+240h+var_231], cl
+.text:1000182A cmp     cl, [edx]
+.text:1000182C jnz     short loc_10001850
+.text:1000182E test    cl, cl
+.text:10001830 jz      short loc_1000184C
+.text:10001832 mov     cl, [eax+1]
+.text:10001835 mov     [esp+240h+var_231], cl
+.text:10001839 cmp     cl, [edx+1]
+.text:1000183C jnz     short loc_10001850
+.text:1000183E add     eax, 2
+.text:10001841 add     edx, 2
+.text:10001844 test    cl, cl
+.text:10001846 mov     dword ptr [esp+240h+var_230], edx
+.text:1000184A jnz     short loc_10001820
+.text:1000184C
+.text:1000184C loc_1000184C:
+.text:1000184C xor     eax, eax
+.text:1000184E jmp     short loc_10001855
+.text:10001850
+.text:10001850 loc_10001850:
+.text:10001850 sbb     eax, eax
+.text:10001852 sbb     eax, 0FFFFFFFFh
+.text:10001855
+.text:10001855 loc_10001855:
+.text:10001855 test    eax, eax
+.text:10001857 jnz     loc_10001945
+.text:1000185D lea     eax, [esp+240h+var_204]
+.text:10001861 push    eax
+.text:10001862 push    offset a0       ; "0"
+.text:10001867 push    offset aOut_angle_pos ; "out_angle_pos"
+.text:1000186C push    esi
+.text:1000186D call    edi ; UF_MOM_ask_assoc_double_array
+.text:1000186F lea     ecx, [esp+250h+var_1FC]
+.text:10001873 push    ecx
+.text:10001874 push    offset a1       ; "1"
+.text:10001879 push    offset aOut_angle_pos ; "out_angle_pos"
+.text:1000187E push    esi
+.text:1000187F call    edi ; UF_MOM_ask_assoc_double_array
+.text:10001881 lea     edx, [esp+260h+var_1D8]
+.text:10001888 push    edx
+.text:10001889 push    offset a0       ; "0"
+.text:1000188E push    offset aPrev_out_angle ;	"prev_out_angle_pos"
+.text:10001893 push    esi
+.text:10001894 call    edi ; UF_MOM_ask_assoc_double_array
+.text:10001896 lea     eax, [esp+270h+var_1D0]
+.text:1000189D push    eax
+.text:1000189E push    offset a1       ; "1"
+.text:100018A3 push    offset aPrev_out_angle ;	"prev_out_angle_pos"
+.text:100018A8 push    esi
+.text:100018A9 call    edi ; UF_MOM_ask_assoc_double_array
+.text:100018AB add     esp, 40h
+.text:100018AE lea     ecx, [esp+240h+var_228]
+.text:100018B2 push    ecx
+.text:100018B3 push    offset a0       ; "0"
+.text:100018B8 push    offset aPos     ; "pos"
+.text:100018BD push    esi
+.text:100018BE call    edi ; UF_MOM_ask_assoc_double_array
+.text:100018C0 lea     edx, [esp+250h+var_220]
+.text:100018C4 push    edx
+.text:100018C5 push    offset a1       ; "1"
+.text:100018CA push    offset aPos     ; "pos"
+.text:100018CF push    esi
+.text:100018D0 call    edi ; UF_MOM_ask_assoc_double_array
+.text:100018D2 lea     eax, [esp+260h+var_218]
+.text:100018D6 push    eax
+.text:100018D7 push    offset a2       ; "2"
+.text:100018DC push    offset aPos     ; "pos"
+.text:100018E1 push    esi
+.text:100018E2 call    edi ; UF_MOM_ask_assoc_double_array
+.text:100018E4 lea     ecx, [esp+270h+var_1EC]
+.text:100018EB push    ecx
+.text:100018EC push    offset aP_num   ; "P_num"
+.text:100018F1 push    esi
+.text:100018F2 call    ds:UF_MOM_ask_string
+.text:100018F8 mov     edx, [esp+27Ch+var_1EC]
+.text:100018FF push    edx	       ; String
+.text:10001900 call    ds:atof
+.text:10001906 add     esp, 40h
+.text:10001909 call    _ftol
+.text:1000190E fld     [esp+240h+var_204]
+.text:10001912 fmul    ds:dbl_10003090
+.text:10001918 sub     esp, 8
+.text:1000191B mov     dword ptr [esp+248h+var_210], eax
+.text:1000191F lea     eax, [esp+248h+Dest]
+.text:10001926 fcos
+.text:10001928 fstp    [esp+248h+var_248]
+.text:1000192B push    offset aMom_output__11 ;	"MOM_output_literal \"\\043600=\\133\\133\\04"...
+.text:10001930 push    eax	       ; Dest
+.text:10001931 call    ds:sprintf
+.text:10001937 lea     ecx, [esp+250h+Dest]
+.text:1000193E push    ecx
+.text:1000193F push    esi
+.text:10001940 call    ebx ; UF_MOM_execute_command
+.text:10001942 add     esp, 18h
+.text:10001945
+.text:10001945 loc_10001945:
+.text:10001945 mov     edx, [ebp+arg_C]
+.text:10001948 mov     dword ptr [esp+240h+var_230], offset aPlane_mill2 ; "PLANE_MILL2"
+.text:10001950 mov     eax, [edx+4]
+.text:10001953
+.text:10001953 loc_10001953:
+.text:10001953 mov     cl, [eax]
+.text:10001955 mov     edx, dword ptr [esp+240h+var_230]
+.text:10001959 mov     [esp+240h+var_231], cl
+.text:1000195D cmp     cl, [edx]
+.text:1000195F jnz     short loc_10001983
+.text:10001961 test    cl, cl
+.text:10001963 jz      short loc_1000197F
+.text:10001965 mov     cl, [eax+1]
+.text:10001968 mov     [esp+240h+var_231], cl
+.text:1000196C cmp     cl, [edx+1]
+.text:1000196F jnz     short loc_10001983
+.text:10001971 add     eax, 2
+.text:10001974 add     edx, 2
+.text:10001977 test    cl, cl
+.text:10001979 mov     dword ptr [esp+240h+var_230], edx
+.text:1000197D jnz     short loc_10001953
+.text:1000197F
+.text:1000197F loc_1000197F:
+.text:1000197F xor     eax, eax
+.text:10001981 jmp     short loc_10001988
+.text:10001983
+.text:10001983 loc_10001983:
+.text:10001983 sbb     eax, eax
+.text:10001985 sbb     eax, 0FFFFFFFFh
+.text:10001988
+.text:10001988 loc_10001988:
+.text:10001988 test    eax, eax
+.text:1000198A jnz     loc_10001CA7
+.text:10001990 lea     eax, [esp+240h+var_204]
+.text:10001994 push    eax
+.text:10001995 push    offset a0       ; "0"
+.text:1000199A push    offset aOut_angle_pos ; "out_angle_pos"
+.text:1000199F push    esi
+.text:100019A0 call    edi ; UF_MOM_ask_assoc_double_array
+.text:100019A2 lea     ecx, [esp+250h+var_1FC]
+.text:100019A6 push    ecx
+.text:100019A7 push    offset a1       ; "1"
+.text:100019AC push    offset aOut_angle_pos ; "out_angle_pos"
+.text:100019B1 push    esi
+.text:100019B2 call    edi ; UF_MOM_ask_assoc_double_array
+.text:100019B4 lea     edx, [esp+260h+var_1D8]
+.text:100019BB push    edx
+.text:100019BC push    offset a0       ; "0"
+.text:100019C1 push    offset aPrev_out_angle ;	"prev_out_angle_pos"
+.text:100019C6 push    esi
+.text:100019C7 call    edi ; UF_MOM_ask_assoc_double_array
+.text:100019C9 lea     eax, [esp+270h+var_1D0]
+.text:100019D0 push    eax
+.text:100019D1 push    offset a1       ; "1"
+.text:100019D6 push    offset aPrev_out_angle ;	"prev_out_angle_pos"
+.text:100019DB push    esi
+.text:100019DC call    edi ; UF_MOM_ask_assoc_double_array
+.text:100019DE add     esp, 40h
+.text:100019E1 lea     ecx, [esp+240h+var_228]
+.text:100019E5 push    ecx
+.text:100019E6 push    offset a0       ; "0"
+.text:100019EB push    offset aPos     ; "pos"
+.text:100019F0 push    esi
+.text:100019F1 call    edi ; UF_MOM_ask_assoc_double_array
+.text:100019F3 lea     edx, [esp+250h+var_220]
+.text:100019F7 push    edx
+.text:100019F8 push    offset a1       ; "1"
+.text:100019FD push    offset aPos     ; "pos"
+.text:10001A02 push    esi
+.text:10001A03 call    edi ; UF_MOM_ask_assoc_double_array
+.text:10001A05 lea     eax, [esp+260h+var_218]
+.text:10001A09 push    eax
+.text:10001A0A push    offset a2       ; "2"
+.text:10001A0F push    offset aPos     ; "pos"
+.text:10001A14 push    esi
+.text:10001A15 call    edi ; UF_MOM_ask_assoc_double_array
+.text:10001A17 lea     ecx, [esp+270h+var_1EC]
+.text:10001A1E push    ecx
+.text:10001A1F push    offset aP_num   ; "P_num"
+.text:10001A24 push    esi
+.text:10001A25 call    ds:UF_MOM_ask_string
+.text:10001A2B mov     edx, [esp+27Ch+var_1EC]
+.text:10001A32 push    edx	       ; String
+.text:10001A33 call    ds:atof
+.text:10001A39 add     esp, 40h
+.text:10001A3C call    _ftol
+.text:10001A41 fld     [esp+240h+var_204]
+.text:10001A45 fmul    ds:dbl_10003088
+.text:10001A4B mov     dword ptr [esp+240h+var_210], eax
+.text:10001A4F lea     edx, [esp+240h+Dest]
+.text:10001A56 fld     st
+.text:10001A58 fsin
+.text:10001A5A fstp    [esp+240h+var_230]
+.text:10001A5E mov     eax, dword ptr [esp+240h+var_230+4]
+.text:10001A62 mov     ecx, dword ptr [esp+240h+var_230]
+.text:10001A66 fcos
+.text:10001A68 push    eax
+.text:10001A69 push    ecx
+.text:10001A6A push    offset aMom_output__12 ;	"MOM_output_literal \"\\043600=\\133\\133\\04"...
+.text:10001A6F push    edx	       ; Dest
+.text:10001A70 fstp    [esp+250h+var_1E8]
+.text:10001A74 call    ds:sprintf
+.text:10001A7A lea     eax, [esp+250h+Dest]
+.text:10001A81 push    eax
+.text:10001A82 push    esi
+.text:10001A83 call    ebx ; UF_MOM_execute_command
+.text:10001A85 mov     ecx, dword ptr [esp+258h+var_1E8+4]
+.text:10001A89 mov     edx, dword ptr [esp+258h+var_1E8]
+.text:10001A8D push    ecx
+.text:10001A8E push    edx
+.text:10001A8F lea     eax, [esp+260h+Dest]
+.text:10001A96 push    offset aMom_output__13 ;	"MOM_output_literal \"\\043810=\\133\\043600"...
+.text:10001A9B push    eax	       ; Dest
+.text:10001A9C call    ds:sprintf
+.text:10001AA2 lea     ecx, [esp+268h+Dest]
+.text:10001AA9 push    ecx
+.text:10001AAA push    esi
+.text:10001AAB call    ebx ; UF_MOM_execute_command
+.text:10001AAD mov     edx, dword ptr [esp+270h+var_230+4]
+.text:10001AB1 mov     eax, dword ptr [esp+270h+var_230]
+.text:10001AB5 push    edx
+.text:10001AB6 push    eax
+.text:10001AB7 lea     ecx, [esp+278h+Dest]
+.text:10001ABE push    offset aMom_output__14 ;	"MOM_output_literal \"\\043812=\\133\\043600"...
+.text:10001AC3 push    ecx	       ; Dest
+.text:10001AC4 call    ds:sprintf
+.text:10001ACA add     esp, 40h
+.text:10001ACD lea     edx, [esp+240h+Dest]
+.text:10001AD4 push    edx
+.text:10001AD5 push    esi
+.text:10001AD6 call    ebx ; UF_MOM_execute_command
+.text:10001AD8 fld     [esp+248h+var_204]
+.text:10001ADC fcomp   ds:dbl_10003080
+.text:10001AE2 add     esp, 8
+.text:10001AE5 fnstsw  ax
+.text:10001AE7 test    ah, 40h
+.text:10001AEA jz      short loc_10001B1C
+.text:10001AEC mov     eax, dword ptr [esp+240h+var_210]
+.text:10001AF0 mov     ecx, dword ptr [esp+240h+var_1FC+4]
+.text:10001AF4 mov     edx, dword ptr [esp+240h+var_1FC]
+.text:10001AF8 push    eax
+.text:10001AF9 push    ecx
+.text:10001AFA push    edx
+.text:10001AFB lea     eax, [esp+24Ch+Dest]
+.text:10001B02 push    offset aMom_output__15 ;	"MOM_output_literal \"G0 C\\133\\043818+%.3"...
+.text:10001B07 push    eax	       ; Dest
+.text:10001B08 call    ds:sprintf
+.text:10001B0E lea     ecx, [esp+254h+Dest]
+.text:10001B15 push    ecx
+.text:10001B16 push    esi
+.text:10001B17 call    ebx ; UF_MOM_execute_command
+.text:10001B19 add     esp, 1Ch
+.text:10001B1C
+.text:10001B1C loc_10001B1C:
+.text:10001B1C mov     eax, dword ptr [esp+240h+var_210]
+.text:10001B20 test    eax, eax
+.text:10001B22 jle     short loc_10001B59
+.text:10001B24 cmp     eax, 31h
+.text:10001B27 jge     short loc_10001B59
+.text:10001B29 mov     ecx, dword ptr [esp+240h+var_1FC]
+.text:10001B2D mov     edx, eax
+.text:10001B2F mov     eax, dword ptr [esp+240h+var_1FC+4]
+.text:10001B33 push    edx
+.text:10001B34 push    eax
+.text:10001B35 push    ecx
+.text:10001B36 lea     edx, [esp+24Ch+Dest]
+.text:10001B3D push    offset aMom_output__16 ;	"MOM_output_literal \"G65 P9998	C\\133\\043"...
+.text:10001B42 push    edx	       ; Dest
+.text:10001B43 call    ds:sprintf
+.text:10001B49 lea     eax, [esp+254h+Dest]
+.text:10001B50 push    eax
+.text:10001B51 push    esi
+.text:10001B52 call    ebx ; UF_MOM_execute_command
+.text:10001B54 add     esp, 1Ch
+.text:10001B57 jmp     short loc_10001B84
+.text:10001B59
+.text:10001B59 loc_10001B59:
+.text:10001B59 mov     ecx, dword ptr [esp+240h+var_1FC+4]
+.text:10001B5D mov     edx, dword ptr [esp+240h+var_1FC]
+.text:10001B61 push    ecx
+.text:10001B62 push    edx
+.text:10001B63 lea     eax, [esp+248h+Dest]
+.text:10001B6A push    offset aMom_output__17 ;	"MOM_output_literal \"G65 P9998	C\\133\\043"...
+.text:10001B6F push    eax	       ; Dest
+.text:10001B70 call    ds:sprintf
+.text:10001B76 lea     ecx, [esp+250h+Dest]
+.text:10001B7D push    ecx
+.text:10001B7E push    esi
+.text:10001B7F call    ebx ; UF_MOM_execute_command
+.text:10001B81 add     esp, 18h
+.text:10001B84
+.text:10001B84 loc_10001B84:
+.text:10001B84 lea     edx, [esp+240h+Dest]
+.text:10001B8B push    offset aMom_output__18 ;	"MOM_output_literal \"G68 X\\133\\043810+\\0"...
+.text:10001B90 push    edx	       ; Dest
+.text:10001B91 call    ds:sprintf
+.text:10001B97 lea     eax, [esp+248h+Dest]
+.text:10001B9E push    eax
+.text:10001B9F push    esi
+.text:10001BA0 call    ebx ; UF_MOM_execute_command
+.text:10001BA2 fld     [esp+250h+var_204]
+.text:10001BA6 fcomp   ds:dbl_10003080
+.text:10001BAC add     esp, 10h
+.text:10001BAF fnstsw  ax
+.text:10001BB1 test    ah, 1
+.text:10001BB4 jnz     short loc_10001BDD
+.text:10001BB6 mov     ecx, dword ptr [esp+240h+var_204+4]
+.text:10001BBA mov     edx, dword ptr [esp+240h+var_204]
+.text:10001BBE push    ecx
+.text:10001BBF push    edx
+.text:10001BC0 lea     eax, [esp+248h+Dest]
+.text:10001BC7 push    offset aMom_output__19 ;	"MOM_output_literal \"G68 X\\133\\043810+\\0"...
+.text:10001BCC push    eax	       ; Dest
+.text:10001BCD call    ds:sprintf
+.text:10001BD3 lea     ecx, [esp+250h+Dest]
+.text:10001BDA push    ecx
+.text:10001BDB jmp     short loc_10001C02
+.text:10001BDD
+.text:10001BDD loc_10001BDD:
+.text:10001BDD mov     edx, dword ptr [esp+240h+var_204+4]
+.text:10001BE1 mov     eax, dword ptr [esp+240h+var_204]
+.text:10001BE5 push    edx
+.text:10001BE6 push    eax
+.text:10001BE7 lea     ecx, [esp+248h+Dest]
+.text:10001BEE push    offset aMom_output__20 ;	"MOM_output_literal \"G68 X\\133-\\043810+\\"...
+.text:10001BF3 push    ecx	       ; Dest
+.text:10001BF4 call    ds:sprintf
+.text:10001BFA lea     edx, [esp+250h+Dest]
+.text:10001C01 push    edx
+.text:10001C02
+.text:10001C02 loc_10001C02:
+.text:10001C02 push    esi
+.text:10001C03 call    ebx ; UF_MOM_execute_command
+.text:10001C05 mov     eax, dword ptr [esp+258h+var_220+4]
+.text:10001C09 mov     ecx, dword ptr [esp+258h+var_220]
+.text:10001C0D mov     edx, dword ptr [esp+258h+var_228+4]
+.text:10001C11 add     esp, 18h
+.text:10001C14 push    eax
+.text:10001C15 mov     eax, dword ptr [esp+244h+var_228]
+.text:10001C19 push    ecx
+.text:10001C1A push    edx
+.text:10001C1B push    eax
+.text:10001C1C lea     ecx, [esp+250h+Dest]
+.text:10001C23 push    offset aMom_output__21 ;	"MOM_output_literal \"G0 X%.3lf	Y%.3lf\""
+.text:10001C28 push    ecx	       ; Dest
+.text:10001C29 call    ds:sprintf
+.text:10001C2F lea     edx, [esp+258h+Dest]
+.text:10001C36 push    edx
+.text:10001C37 push    esi
+.text:10001C38 call    ebx ; UF_MOM_execute_command
+.text:10001C3A lea     eax, [esp+260h+Dest]
+.text:10001C41 push    offset aMom_output__22 ;	"MOM_output_literal \"G69\""
+.text:10001C46 push    eax	       ; Dest
+.text:10001C47 call    ds:sprintf
+.text:10001C4D lea     ecx, [esp+268h+Dest]
+.text:10001C54 push    ecx
+.text:10001C55 push    esi
+.text:10001C56 call    ebx ; UF_MOM_execute_command
+.text:10001C58 lea     edx, [esp+270h+Dest]
+.text:10001C5F push    offset aMom_output__23 ;	"MOM_output_literal \"G68 X\\133\\043800\\13"...
+.text:10001C64 push    edx	       ; Dest
+.text:10001C65 call    ds:sprintf
+.text:10001C6B lea     eax, [esp+278h+Dest]
+.text:10001C72 push    eax
+.text:10001C73 push    esi
+.text:10001C74 call    ebx ; UF_MOM_execute_command
+.text:10001C76 mov     ecx, dword ptr [esp+280h+var_204+4]
+.text:10001C7D mov     edx, dword ptr [esp+280h+var_204]
+.text:10001C81 add     esp, 40h
+.text:10001C84 lea     eax, [esp+240h+Dest]
+.text:10001C8B push    ecx
+.text:10001C8C push    edx
+.text:10001C8D push    offset aMom_output__24 ;	"MOM_output_literal \"G68 X\\133\\043800\\13"...
+.text:10001C92 push    eax	       ; Dest
+.text:10001C93 call    ds:sprintf
+.text:10001C99 lea     ecx, [esp+250h+Dest]
+.text:10001CA0 push    ecx
+.text:10001CA1 push    esi
+.text:10001CA2 call    ebx ; UF_MOM_execute_command
+.text:10001CA4 add     esp, 18h
+.text:10001CA7
+.text:10001CA7 loc_10001CA7:
+.text:10001CA7 mov     edx, [ebp+arg_C]
+.text:10001CAA mov     dword ptr [esp+240h+var_230], offset aPlane_mill2_pr ; "PLANE_MILL2_PR"
+.text:10001CB2 mov     eax, [edx+4]
+.text:10001CB5
+.text:10001CB5 loc_10001CB5:
+.text:10001CB5 mov     cl, [eax]
+.text:10001CB7 mov     edx, dword ptr [esp+240h+var_230]
+.text:10001CBB mov     [esp+240h+var_231], cl
+.text:10001CBF cmp     cl, [edx]
+.text:10001CC1 jnz     short loc_10001CE5
+.text:10001CC3 test    cl, cl
+.text:10001CC5 jz      short loc_10001CE1
+.text:10001CC7 mov     cl, [eax+1]
+.text:10001CCA mov     [esp+240h+var_231], cl
+.text:10001CCE cmp     cl, [edx+1]
+.text:10001CD1 jnz     short loc_10001CE5
+.text:10001CD3 add     eax, 2
+.text:10001CD6 add     edx, 2
+.text:10001CD9 test    cl, cl
+.text:10001CDB mov     dword ptr [esp+240h+var_230], edx
+.text:10001CDF jnz     short loc_10001CB5
+.text:10001CE1
+.text:10001CE1 loc_10001CE1:
+.text:10001CE1 xor     eax, eax
+.text:10001CE3 jmp     short loc_10001CEA
+.text:10001CE5
+.text:10001CE5 loc_10001CE5:
+.text:10001CE5 sbb     eax, eax
+.text:10001CE7 sbb     eax, 0FFFFFFFFh
+.text:10001CEA
+.text:10001CEA loc_10001CEA:
+.text:10001CEA test    eax, eax
+.text:10001CEC jnz     loc_10002009
+.text:10001CF2 lea     eax, [esp+240h+var_204]
+.text:10001CF6 push    eax
+.text:10001CF7 push    offset a0       ; "0"
+.text:10001CFC push    offset aOut_angle_pos ; "out_angle_pos"
+.text:10001D01 push    esi
+.text:10001D02 call    edi ; UF_MOM_ask_assoc_double_array
+.text:10001D04 lea     ecx, [esp+250h+var_1FC]
+.text:10001D08 push    ecx
+.text:10001D09 push    offset a1       ; "1"
+.text:10001D0E push    offset aOut_angle_pos ; "out_angle_pos"
+.text:10001D13 push    esi
+.text:10001D14 call    edi ; UF_MOM_ask_assoc_double_array
+.text:10001D16 lea     edx, [esp+260h+var_1D8]
+.text:10001D1D push    edx
+.text:10001D1E push    offset a0       ; "0"
+.text:10001D23 push    offset aPrev_out_angle ;	"prev_out_angle_pos"
+.text:10001D28 push    esi
+.text:10001D29 call    edi ; UF_MOM_ask_assoc_double_array
+.text:10001D2B lea     eax, [esp+270h+var_1D0]
+.text:10001D32 push    eax
+.text:10001D33 push    offset a1       ; "1"
+.text:10001D38 push    offset aPrev_out_angle ;	"prev_out_angle_pos"
+.text:10001D3D push    esi
+.text:10001D3E call    edi ; UF_MOM_ask_assoc_double_array
+.text:10001D40 add     esp, 40h
+.text:10001D43 lea     ecx, [esp+240h+var_228]
+.text:10001D47 push    ecx
+.text:10001D48 push    offset a0       ; "0"
+.text:10001D4D push    offset aPrev_pos	; "prev_pos"
+.text:10001D52 push    esi
+.text:10001D53 call    edi ; UF_MOM_ask_assoc_double_array
+.text:10001D55 lea     edx, [esp+250h+var_220]
+.text:10001D59 push    edx
+.text:10001D5A push    offset a1       ; "1"
+.text:10001D5F push    offset aPrev_pos	; "prev_pos"
+.text:10001D64 push    esi
+.text:10001D65 call    edi ; UF_MOM_ask_assoc_double_array
+.text:10001D67 lea     eax, [esp+260h+var_218]
+.text:10001D6B push    eax
+.text:10001D6C push    offset a2       ; "2"
+.text:10001D71 push    offset aPrev_pos	; "prev_pos"
+.text:10001D76 push    esi
+.text:10001D77 call    edi ; UF_MOM_ask_assoc_double_array
+.text:10001D79 lea     ecx, [esp+270h+var_1EC]
+.text:10001D80 push    ecx
+.text:10001D81 push    offset aP_num   ; "P_num"
+.text:10001D86 push    esi
+.text:10001D87 call    ds:UF_MOM_ask_string
+.text:10001D8D mov     edx, [esp+27Ch+var_1EC]
+.text:10001D94 push    edx	       ; String
+.text:10001D95 call    ds:atof
+.text:10001D9B add     esp, 40h
+.text:10001D9E call    _ftol
+.text:10001DA3 fld     [esp+240h+var_204]
+.text:10001DA7 fmul    ds:dbl_10003088
+.text:10001DAD mov     dword ptr [esp+240h+var_210], eax
+.text:10001DB1 lea     edx, [esp+240h+Dest]
+.text:10001DB8 fld     st
+.text:10001DBA fsin
+.text:10001DBC fstp    [esp+240h+var_230]
+.text:10001DC0 mov     eax, dword ptr [esp+240h+var_230+4]
+.text:10001DC4 mov     ecx, dword ptr [esp+240h+var_230]
+.text:10001DC8 fcos
+.text:10001DCA push    eax
+.text:10001DCB push    ecx
+.text:10001DCC push    offset aPutsOfile04360 ;	"puts $ofile  \"\\043600=\\133\\133\\043\\1336"...
+.text:10001DD1 push    edx	       ; Dest
+.text:10001DD2 fstp    [esp+250h+var_1E8]
+.text:10001DD6 call    ds:sprintf
+.text:10001DDC lea     eax, [esp+250h+Dest]
+.text:10001DE3 push    eax
+.text:10001DE4 push    esi
+.text:10001DE5 call    ebx ; UF_MOM_execute_command
+.text:10001DE7 mov     ecx, dword ptr [esp+258h+var_1E8+4]
+.text:10001DEB mov     edx, dword ptr [esp+258h+var_1E8]
+.text:10001DEF push    ecx
+.text:10001DF0 push    edx
+.text:10001DF1 lea     eax, [esp+260h+Dest]
+.text:10001DF8 push    offset aPutsOfile04381 ;	"puts $ofile  \"\\043810=\\133\\043600*\\133%"...
+.text:10001DFD push    eax	       ; Dest
+.text:10001DFE call    ds:sprintf
+.text:10001E04 lea     ecx, [esp+268h+Dest]
+.text:10001E0B push    ecx
+.text:10001E0C push    esi
+.text:10001E0D call    ebx ; UF_MOM_execute_command
+.text:10001E0F mov     edx, dword ptr [esp+270h+var_230+4]
+.text:10001E13 mov     eax, dword ptr [esp+270h+var_230]
+.text:10001E17 push    edx
+.text:10001E18 push    eax
+.text:10001E19 lea     ecx, [esp+278h+Dest]
+.text:10001E20 push    offset aPutsOfile043_0 ;	"puts $ofile  \"\\043812=\\133\\043600*\\133%"...
+.text:10001E25 push    ecx	       ; Dest
+.text:10001E26 call    ds:sprintf
+.text:10001E2C add     esp, 40h
+.text:10001E2F lea     edx, [esp+240h+Dest]
+.text:10001E36 push    edx
+.text:10001E37 push    esi
+.text:10001E38 call    ebx ; UF_MOM_execute_command
+.text:10001E3A fld     [esp+248h+var_204]
+.text:10001E3E fcomp   ds:dbl_10003080
+.text:10001E44 add     esp, 8
+.text:10001E47 fnstsw  ax
+.text:10001E49 test    ah, 40h
+.text:10001E4C jz      short loc_10001E7E
+.text:10001E4E mov     eax, dword ptr [esp+240h+var_210]
+.text:10001E52 mov     ecx, dword ptr [esp+240h+var_1FC+4]
+.text:10001E56 mov     edx, dword ptr [esp+240h+var_1FC]
+.text:10001E5A push    eax
+.text:10001E5B push    ecx
+.text:10001E5C push    edx
+.text:10001E5D lea     eax, [esp+24Ch+Dest]
+.text:10001E64 push    offset aPutsOfileG0C13 ;	"puts $ofile  \"G0 C\\133\\043818+%.3lf\\135"...
+.text:10001E69 push    eax	       ; Dest
+.text:10001E6A call    ds:sprintf
+.text:10001E70 lea     ecx, [esp+254h+Dest]
+.text:10001E77 push    ecx
+.text:10001E78 push    esi
+.text:10001E79 call    ebx ; UF_MOM_execute_command
+.text:10001E7B add     esp, 1Ch
+.text:10001E7E
+.text:10001E7E loc_10001E7E:
+.text:10001E7E mov     eax, dword ptr [esp+240h+var_210]
+.text:10001E82 test    eax, eax
+.text:10001E84 jle     short loc_10001EBB
+.text:10001E86 cmp     eax, 31h
+.text:10001E89 jge     short loc_10001EBB
+.text:10001E8B mov     ecx, dword ptr [esp+240h+var_1FC]
+.text:10001E8F mov     edx, eax
+.text:10001E91 mov     eax, dword ptr [esp+240h+var_1FC+4]
+.text:10001E95 push    edx
+.text:10001E96 push    eax
+.text:10001E97 push    ecx
+.text:10001E98 lea     edx, [esp+24Ch+Dest]
+.text:10001E9F push    offset aPutsOfileG65P9 ;	"puts $ofile  \"G65 P9998 C\\133\\043818+%."...
+.text:10001EA4 push    edx	       ; Dest
+.text:10001EA5 call    ds:sprintf
+.text:10001EAB lea     eax, [esp+254h+Dest]
+.text:10001EB2 push    eax
+.text:10001EB3 push    esi
+.text:10001EB4 call    ebx ; UF_MOM_execute_command
+.text:10001EB6 add     esp, 1Ch
+.text:10001EB9 jmp     short loc_10001EE6
+.text:10001EBB
+.text:10001EBB loc_10001EBB:
+.text:10001EBB mov     ecx, dword ptr [esp+240h+var_1FC+4]
+.text:10001EBF mov     edx, dword ptr [esp+240h+var_1FC]
+.text:10001EC3 push    ecx
+.text:10001EC4 push    edx
+.text:10001EC5 lea     eax, [esp+248h+Dest]
+.text:10001ECC push    offset aPutsOfileG65_0 ;	"puts $ofile  \"G65 P9998 C\\133\\043818+%."...
+.text:10001ED1 push    eax	       ; Dest
+.text:10001ED2 call    ds:sprintf
+.text:10001ED8 lea     ecx, [esp+250h+Dest]
+.text:10001EDF push    ecx
+.text:10001EE0 push    esi
+.text:10001EE1 call    ebx ; UF_MOM_execute_command
+.text:10001EE3 add     esp, 18h
+.text:10001EE6
+.text:10001EE6 loc_10001EE6:
+.text:10001EE6 lea     edx, [esp+240h+Dest]
+.text:10001EED push    offset aPutsOfileG68X1 ;	"puts $ofile  \"G68 X\\133\\043810+\\043800\\"...
+.text:10001EF2 push    edx	       ; Dest
+.text:10001EF3 call    ds:sprintf
+.text:10001EF9 lea     eax, [esp+248h+Dest]
+.text:10001F00 push    eax
+.text:10001F01 push    esi
+.text:10001F02 call    ebx ; UF_MOM_execute_command
+.text:10001F04 fld     [esp+250h+var_204]
+.text:10001F08 fcomp   ds:dbl_10003080
+.text:10001F0E add     esp, 10h
+.text:10001F11 fnstsw  ax
+.text:10001F13 test    ah, 1
+.text:10001F16 jnz     short loc_10001F3F
+.text:10001F18 mov     ecx, dword ptr [esp+240h+var_204+4]
+.text:10001F1C mov     edx, dword ptr [esp+240h+var_204]
+.text:10001F20 push    ecx
+.text:10001F21 push    edx
+.text:10001F22 lea     eax, [esp+248h+Dest]
+.text:10001F29 push    offset aPutsOfileG68_0 ;	"puts $ofile  \"G68 X\\133\\043810+\\043800\\"...
+.text:10001F2E push    eax	       ; Dest
+.text:10001F2F call    ds:sprintf
+.text:10001F35 lea     ecx, [esp+250h+Dest]
+.text:10001F3C push    ecx
+.text:10001F3D jmp     short loc_10001F64
+.text:10001F3F
+.text:10001F3F loc_10001F3F:
+.text:10001F3F mov     edx, dword ptr [esp+240h+var_204+4]
+.text:10001F43 mov     eax, dword ptr [esp+240h+var_204]
+.text:10001F47 push    edx
+.text:10001F48 push    eax
+.text:10001F49 lea     ecx, [esp+248h+Dest]
+.text:10001F50 push    offset aPutsOfileG68_1 ;	"puts $ofile  \"G68 X\\133-\\043810+\\043800"...
+.text:10001F55 push    ecx	       ; Dest
+.text:10001F56 call    ds:sprintf
+.text:10001F5C lea     edx, [esp+250h+Dest]
+.text:10001F63 push    edx
+.text:10001F64
+.text:10001F64 loc_10001F64:
+.text:10001F64 push    esi
+.text:10001F65 call    ebx ; UF_MOM_execute_command
+.text:10001F67 mov     eax, dword ptr [esp+258h+var_220+4]
+.text:10001F6B mov     ecx, dword ptr [esp+258h+var_220]
+.text:10001F6F mov     edx, dword ptr [esp+258h+var_228+4]
+.text:10001F73 add     esp, 18h
+.text:10001F76 push    eax
+.text:10001F77 mov     eax, dword ptr [esp+244h+var_228]
+.text:10001F7B push    ecx
+.text:10001F7C push    edx
+.text:10001F7D push    eax
+.text:10001F7E lea     ecx, [esp+250h+Dest]
+.text:10001F85 push    offset aPutsOfileG0X_3 ;	"puts $ofile  \"G0 X%.3lf Y%.3lf\""
+.text:10001F8A push    ecx	       ; Dest
+.text:10001F8B call    ds:sprintf
+.text:10001F91 lea     edx, [esp+258h+Dest]
+.text:10001F98 push    edx
+.text:10001F99 push    esi
+.text:10001F9A call    ebx ; UF_MOM_execute_command
+.text:10001F9C lea     eax, [esp+260h+Dest]
+.text:10001FA3 push    offset aPutsOfileG69 ; "puts $ofile  \"G69\""
+.text:10001FA8 push    eax	       ; Dest
+.text:10001FA9 call    ds:sprintf
+.text:10001FAF lea     ecx, [esp+268h+Dest]
+.text:10001FB6 push    ecx
+.text:10001FB7 push    esi
+.text:10001FB8 call    ebx ; UF_MOM_execute_command
+.text:10001FBA lea     edx, [esp+270h+Dest]
+.text:10001FC1 push    offset aPutsOfileG68_2 ;	"puts $ofile  \"G68 X\\133\\043800\\135	Y\\13"...
+.text:10001FC6 push    edx	       ; Dest
+.text:10001FC7 call    ds:sprintf
+.text:10001FCD lea     eax, [esp+278h+Dest]
+.text:10001FD4 push    eax
+.text:10001FD5 push    esi
+.text:10001FD6 call    ebx ; UF_MOM_execute_command
+.text:10001FD8 mov     ecx, dword ptr [esp+280h+var_204+4]
+.text:10001FDF mov     edx, dword ptr [esp+280h+var_204]
+.text:10001FE3 add     esp, 40h
+.text:10001FE6 lea     eax, [esp+240h+Dest]
+.text:10001FED push    ecx
+.text:10001FEE push    edx
+.text:10001FEF push    offset aPutsOfileG68_3 ;	"puts $ofile  \"G68 X\\133\\043800\\135	Y\\13"...
+.text:10001FF4 push    eax	       ; Dest
+.text:10001FF5 call    ds:sprintf
+.text:10001FFB lea     ecx, [esp+250h+Dest]
+.text:10002002 push    ecx
+.text:10002003 push    esi
+.text:10002004 call    ebx ; UF_MOM_execute_command
+.text:10002006 add     esp, 18h
+.text:10002009
+.text:10002009 loc_10002009:
+.text:10002009 mov     edx, [ebp+arg_C]
+.text:1000200C mov     dword ptr [esp+240h+var_230], offset aPlane2 ; "PLANE2"
+.text:10002014 mov     eax, [edx+4]
+.text:10002017
+.text:10002017 loc_10002017:
+.text:10002017 mov     cl, [eax]
+.text:10002019 mov     edx, dword ptr [esp+240h+var_230]
+.text:1000201D mov     [esp+240h+var_231], cl
+.text:10002021 cmp     cl, [edx]
+.text:10002023 jnz     short loc_10002047
+.text:10002025 test    cl, cl
+.text:10002027 jz      short loc_10002043
+.text:10002029 mov     cl, [eax+1]
+.text:1000202C mov     [esp+240h+var_231], cl
+.text:10002030 cmp     cl, [edx+1]
+.text:10002033 jnz     short loc_10002047
+.text:10002035 add     eax, 2
+.text:10002038 add     edx, 2
+.text:1000203B test    cl, cl
+.text:1000203D mov     dword ptr [esp+240h+var_230], edx
+.text:10002041 jnz     short loc_10002017
+.text:10002043
+.text:10002043 loc_10002043:
+.text:10002043 xor     eax, eax
+.text:10002045 jmp     short loc_1000204C
+.text:10002047
+.text:10002047 loc_10002047:
+.text:10002047 sbb     eax, eax
+.text:10002049 sbb     eax, 0FFFFFFFFh
+.text:1000204C
+.text:1000204C loc_1000204C:
+.text:1000204C test    eax, eax
+.text:1000204E jnz     short loc_10002071
+.text:10002050 lea     eax, [esp+240h+Dest]
+.text:10002057 push    offset aMom_output__25 ;	"MOM_output_literal \"G54.2 P1 G01 X\\133-"...
+.text:1000205C push    eax	       ; Dest
+.text:1000205D call    ds:sprintf
+.text:10002063 lea     ecx, [esp+248h+Dest]
+.text:1000206A push    ecx
+.text:1000206B push    esi
+.text:1000206C call    ebx ; UF_MOM_execute_command
+.text:1000206E add     esp, 10h
+.text:10002071
+.text:10002071 loc_10002071:
+.text:10002071 mov     edx, [ebp+arg_C]
+.text:10002074 mov     dword ptr [esp+240h+var_230], offset aPlane_end ; "PLANE_END"
+.text:1000207C mov     eax, [edx+4]
+.text:1000207F
+.text:1000207F loc_1000207F:
+.text:1000207F mov     cl, [eax]
+.text:10002081 mov     edx, dword ptr [esp+240h+var_230]
+.text:10002085 mov     [esp+240h+var_231], cl
+.text:10002089 cmp     cl, [edx]
+.text:1000208B jnz     short loc_100020AF
+.text:1000208D test    cl, cl
+.text:1000208F jz      short loc_100020AB
+.text:10002091 mov     cl, [eax+1]
+.text:10002094 mov     [esp+240h+var_231], cl
+.text:10002098 cmp     cl, [edx+1]
+.text:1000209B jnz     short loc_100020AF
+.text:1000209D add     eax, 2
+.text:100020A0 add     edx, 2
+.text:100020A3 test    cl, cl
+.text:100020A5 mov     dword ptr [esp+240h+var_230], edx
+.text:100020A9 jnz     short loc_1000207F
+.text:100020AB
+.text:100020AB loc_100020AB:
+.text:100020AB xor     eax, eax
+.text:100020AD jmp     short loc_100020B4
+.text:100020AF
+.text:100020AF loc_100020AF:
+.text:100020AF sbb     eax, eax
+.text:100020B1 sbb     eax, 0FFFFFFFFh
+.text:100020B4
+.text:100020B4 loc_100020B4:
+.text:100020B4 test    eax, eax
+.text:100020B6 jnz     short loc_10002101
+.text:100020B8 mov     eax, dword ptr [esp+240h+var_210]
+.text:100020BC lea     ecx, [esp+240h+Dest]
+.text:100020C3 push    eax
+.text:100020C4 push    offset aMom_output__26 ;	"MOM_output_literal \"G01 G54.2	P0 G91 X\\"...
+.text:100020C9 push    ecx	       ; Dest
+.text:100020CA call    ds:sprintf
+.text:100020D0 lea     edx, [esp+24Ch+Dest]
+.text:100020D7 push    edx
+.text:100020D8 push    esi
+.text:100020D9 call    ebx ; UF_MOM_execute_command
+.text:100020DB mov     eax, dword ptr [esp+254h+var_210]
+.text:100020DF lea     ecx, [esp+254h+Dest]
+.text:100020E6 push    eax
+.text:100020E7 push    offset aMom_output_l_8 ;	"MOM_output_literal \"G90\""
+.text:100020EC push    ecx	       ; Dest
+.text:100020ED call    ds:sprintf
+.text:100020F3 lea     edx, [esp+260h+Dest]
+.text:100020FA push    edx
+.text:100020FB push    esi
+.text:100020FC call    ebx ; UF_MOM_execute_command
+.text:100020FE add     esp, 28h
+.text:10002101
+.text:10002101 loc_10002101:
+.text:10002101 mov     eax, [ebp+arg_C]
+.text:10002104 mov     dword ptr [esp+240h+var_230], offset aPlane_moving ; "PLANE_moving"
+.text:1000210C mov     eax, [eax+4]
+.text:1000210F
+.text:1000210F loc_1000210F:
+.text:1000210F mov     cl, [eax]
+.text:10002111 mov     edx, dword ptr [esp+240h+var_230]
+.text:10002115 mov     [esp+240h+var_231], cl
+.text:10002119 cmp     cl, [edx]
+.text:1000211B jnz     short loc_1000213F
+.text:1000211D test    cl, cl
+.text:1000211F jz      short loc_1000213B
+.text:10002121 mov     cl, [eax+1]
+.text:10002124 mov     [esp+240h+var_231], cl
+.text:10002128 cmp     cl, [edx+1]
+.text:1000212B jnz     short loc_1000213F
+.text:1000212D add     eax, 2
+.text:10002130 add     edx, 2
+.text:10002133 test    cl, cl
+.text:10002135 mov     dword ptr [esp+240h+var_230], edx
+.text:10002139 jnz     short loc_1000210F
+.text:1000213B
+.text:1000213B loc_1000213B:
+.text:1000213B xor     eax, eax
+.text:1000213D jmp     short loc_10002144
+.text:1000213F
+.text:1000213F loc_1000213F:
+.text:1000213F sbb     eax, eax
+.text:10002141 sbb     eax, 0FFFFFFFFh
+.text:10002144
+.text:10002144 loc_10002144:
+.text:10002144 test    eax, eax
+.text:10002146 jnz     loc_10002218
+.text:1000214C lea     eax, [esp+240h+var_228]
+.text:10002150 push    eax
+.text:10002151 push    offset a0       ; "0"
+.text:10002156 push    offset aPos     ; "pos"
+.text:1000215B push    esi
+.text:1000215C call    edi ; UF_MOM_ask_assoc_double_array
+.text:1000215E lea     ecx, [esp+250h+var_220]
+.text:10002162 push    ecx
+.text:10002163 push    offset a1       ; "1"
+.text:10002168 push    offset aPos     ; "pos"
+.text:1000216D push    esi
+.text:1000216E call    edi ; UF_MOM_ask_assoc_double_array
+.text:10002170 lea     edx, [esp+260h+var_218]
+.text:10002174 push    edx
+.text:10002175 push    offset a2       ; "2"
+.text:1000217A push    offset aPos     ; "pos"
+.text:1000217F push    esi
+.text:10002180 call    edi ; UF_MOM_ask_assoc_double_array
+.text:10002182 lea     eax, [esp+270h+String]
+.text:10002189 push    eax
+.text:1000218A push    offset aTool_number ; "tool_number"
+.text:1000218F push    esi
+.text:10002190 call    ds:UF_MOM_ask_string
+.text:10002196 mov     ecx, dword ptr [esp+27Ch+var_210]
+.text:1000219A push    offset aMom_output__27 ;	"MOM_output_literal \"G54\""
+.text:1000219F add     ecx, 0EA60h
+.text:100021A5 mov     dword ptr [esp+280h+var_210], ecx
+.text:100021A9 lea     ecx, [esp+280h+Dest]
+.text:100021B0 push    ecx	       ; Dest
+.text:100021B1 call    ds:sprintf
+.text:100021B7 add     esp, 44h
+.text:100021BA lea     edx, [esp+240h+Dest]
+.text:100021C1 push    edx
+.text:100021C2 push    esi
+.text:100021C3 call    ebx ; UF_MOM_execute_command
+.text:100021C5 lea     eax, [esp+248h+Dest]
+.text:100021CC push    offset aMom_output__28 ;	"MOM_output_literal \"G01 G54.2	P1 G91 X\\"...
+.text:100021D1 push    eax	       ; Dest
+.text:100021D2 call    ds:sprintf
+.text:100021D8 lea     ecx, [esp+250h+Dest]
+.text:100021DF push    ecx
+.text:100021E0 push    esi
+.text:100021E1 call    ebx ; UF_MOM_execute_command
+.text:100021E3 mov     edx, dword ptr [esp+258h+var_220+4]
+.text:100021E7 mov     eax, dword ptr [esp+258h+var_220]
+.text:100021EB mov     ecx, dword ptr [esp+258h+var_228+4]
+.text:100021EF push    edx
+.text:100021F0 mov     edx, dword ptr [esp+25Ch+var_228]
+.text:100021F4 push    eax
+.text:100021F5 push    ecx
+.text:100021F6 push    edx
+.text:100021F7 lea     eax, [esp+268h+Dest]
+.text:100021FE push    offset aMom_output__29 ;	"MOM_output_literal \"G90 G0 X%.3lf Y%.3l"...
+.text:10002203 push    eax	       ; Dest
+.text:10002204 call    ds:sprintf
+.text:1000220A lea     ecx, [esp+270h+Dest]
+.text:10002211 push    ecx
+.text:10002212 push    esi
+.text:10002213 call    ebx ; UF_MOM_execute_command
+.text:10002215 add     esp, 38h
+.text:10002218
+.text:10002218 loc_10002218:
+.text:10002218 mov     edx, [ebp+arg_C]
+.text:1000221B mov     dword ptr [esp+240h+var_230], offset aPlane_moving2 ; "PLANE_moving2"
+.text:10002223 mov     eax, [edx+4]
+.text:10002226
+.text:10002226 loc_10002226:
+.text:10002226 mov     cl, [eax]
+.text:10002228 mov     edx, dword ptr [esp+240h+var_230]
+.text:1000222C mov     [esp+240h+var_231], cl
+.text:10002230 cmp     cl, [edx]
+.text:10002232 jnz     short loc_10002256
+.text:10002234 test    cl, cl
+.text:10002236 jz      short loc_10002252
+.text:10002238 mov     cl, [eax+1]
+.text:1000223B mov     [esp+240h+var_231], cl
+.text:1000223F cmp     cl, [edx+1]
+.text:10002242 jnz     short loc_10002256
+.text:10002244 add     eax, 2
+.text:10002247 add     edx, 2
+.text:1000224A test    cl, cl
+.text:1000224C mov     dword ptr [esp+240h+var_230], edx
+.text:10002250 jnz     short loc_10002226
+.text:10002252
+.text:10002252 loc_10002252:
+.text:10002252 xor     eax, eax
+.text:10002254 jmp     short loc_1000225B
+.text:10002256
+.text:10002256 loc_10002256:
+.text:10002256 sbb     eax, eax
+.text:10002258 sbb     eax, 0FFFFFFFFh
+.text:1000225B
+.text:1000225B loc_1000225B:
+.text:1000225B test    eax, eax
+.text:1000225D jnz     loc_10002312
+.text:10002263 lea     eax, [esp+240h+var_228]
+.text:10002267 push    eax
+.text:10002268 push    offset a0       ; "0"
+.text:1000226D push    offset aPos     ; "pos"
+.text:10002272 push    esi
+.text:10002273 call    edi ; UF_MOM_ask_assoc_double_array
+.text:10002275 lea     ecx, [esp+250h+var_220]
+.text:10002279 push    ecx
+.text:1000227A push    offset a1       ; "1"
+.text:1000227F push    offset aPos     ; "pos"
+.text:10002284 push    esi
+.text:10002285 call    edi ; UF_MOM_ask_assoc_double_array
+.text:10002287 lea     edx, [esp+260h+var_218]
+.text:1000228B push    edx
+.text:1000228C push    offset a2       ; "2"
+.text:10002291 push    offset aPos     ; "pos"
+.text:10002296 push    esi
+.text:10002297 call    edi ; UF_MOM_ask_assoc_double_array
+.text:10002299 lea     eax, [esp+270h+Dest]
+.text:100022A0 push    offset aMom_output__27 ;	"MOM_output_literal \"G54\""
+.text:100022A5 push    eax	       ; Dest
+.text:100022A6 call    ds:sprintf
+.text:100022AC lea     ecx, [esp+278h+Dest]
+.text:100022B3 push    ecx
+.text:100022B4 push    esi
+.text:100022B5 call    ebx ; UF_MOM_execute_command
+.text:100022B7 mov     edx, dword ptr [esp+280h+var_210]
+.text:100022BB add     esp, 40h
+.text:100022BE lea     eax, [esp+240h+Dest]
+.text:100022C5 push    edx
+.text:100022C6 push    offset aMom_output__30 ;	"MOM_output_literal \"G01 G54.2	P1 G91 X\\"...
+.text:100022CB push    eax	       ; Dest
+.text:100022CC call    ds:sprintf
+.text:100022D2 lea     ecx, [esp+24Ch+Dest]
+.text:100022D9 push    ecx
+.text:100022DA push    esi
+.text:100022DB call    ebx ; UF_MOM_execute_command
+.text:100022DD mov     edx, dword ptr [esp+254h+var_220+4]
+.text:100022E1 mov     eax, dword ptr [esp+254h+var_220]
+.text:100022E5 mov     ecx, dword ptr [esp+254h+var_228+4]
+.text:100022E9 push    edx
+.text:100022EA mov     edx, dword ptr [esp+258h+var_228]
+.text:100022EE push    eax
+.text:100022EF push    ecx
+.text:100022F0 push    edx
+.text:100022F1 lea     eax, [esp+264h+Dest]
+.text:100022F8 push    offset aMom_output__31 ;	"MOM_output_literal \"G0 G90 X%.3lf Y%.3l"...
+.text:100022FD push    eax	       ; Dest
+.text:100022FE call    ds:sprintf
+.text:10002304 lea     ecx, [esp+26Ch+Dest]
+.text:1000230B push    ecx
+.text:1000230C push    esi
+.text:1000230D call    ebx ; UF_MOM_execute_command
+.text:1000230F add     esp, 34h
+.text:10002312
+.text:10002312 loc_10002312:
+.text:10002312 mov     edx, [ebp+arg_C]
+.text:10002315 mov     dword ptr [esp+240h+var_230], offset aPlane_moving2_ ; "PLANE_moving2_dynamic"
+.text:1000231D mov     eax, [edx+4]
+.text:10002320
+.text:10002320 loc_10002320:
+.text:10002320 mov     cl, [eax]
+.text:10002322 mov     edx, dword ptr [esp+240h+var_230]
+.text:10002326 mov     [esp+240h+var_231], cl
+.text:1000232A cmp     cl, [edx]
+.text:1000232C jnz     short loc_10002350
+.text:1000232E test    cl, cl
+.text:10002330 jz      short loc_1000234C
+.text:10002332 mov     cl, [eax+1]
+.text:10002335 mov     [esp+240h+var_231], cl
+.text:10002339 cmp     cl, [edx+1]
+.text:1000233C jnz     short loc_10002350
+.text:1000233E add     eax, 2
+.text:10002341 add     edx, 2
+.text:10002344 test    cl, cl
+.text:10002346 mov     dword ptr [esp+240h+var_230], edx
+.text:1000234A jnz     short loc_10002320
+.text:1000234C
+.text:1000234C loc_1000234C:
+.text:1000234C xor     eax, eax
+.text:1000234E jmp     short loc_10002355
+.text:10002350
+.text:10002350 loc_10002350:
+.text:10002350 sbb     eax, eax
+.text:10002352 sbb     eax, 0FFFFFFFFh
+.text:10002355
+.text:10002355 loc_10002355:
+.text:10002355 test    eax, eax
+.text:10002357 jnz     short loc_100023C7
+.text:10002359 lea     eax, [esp+240h+var_228]
+.text:1000235D push    eax
+.text:1000235E push    offset a0       ; "0"
+.text:10002363 push    offset aPos     ; "pos"
+.text:10002368 push    esi
+.text:10002369 call    edi ; UF_MOM_ask_assoc_double_array
+.text:1000236B lea     ecx, [esp+250h+var_220]
+.text:1000236F push    ecx
+.text:10002370 push    offset a1       ; "1"
+.text:10002375 push    offset aPos     ; "pos"
+.text:1000237A push    esi
+.text:1000237B call    edi ; UF_MOM_ask_assoc_double_array
+.text:1000237D lea     edx, [esp+260h+var_218]
+.text:10002381 push    edx
+.text:10002382 push    offset a2       ; "2"
+.text:10002387 push    offset aPos     ; "pos"
+.text:1000238C push    esi
+.text:1000238D call    edi ; UF_MOM_ask_assoc_double_array
+.text:1000238F mov     eax, dword ptr [esp+270h+var_220+4]
+.text:10002393 mov     ecx, dword ptr [esp+270h+var_220]
+.text:10002397 mov     edx, dword ptr [esp+270h+var_228+4]
+.text:1000239B push    eax
+.text:1000239C mov     eax, dword ptr [esp+274h+var_228]
+.text:100023A0 push    ecx
+.text:100023A1 push    edx
+.text:100023A2 push    eax
+.text:100023A3 lea     ecx, [esp+280h+Dest]
+.text:100023AA push    offset aMom_output__31 ;	"MOM_output_literal \"G0 G90 X%.3lf Y%.3l"...
+.text:100023AF push    ecx	       ; Dest
+.text:100023B0 call    ds:sprintf
+.text:100023B6 add     esp, 48h
+.text:100023B9 lea     edx, [esp+240h+Dest]
+.text:100023C0 push    edx
+.text:100023C1 push    esi
+.text:100023C2 call    ebx ; UF_MOM_execute_command
+.text:100023C4 add     esp, 8
+.text:100023C7
+.text:100023C7 loc_100023C7:
+.text:100023C7 mov     eax, [ebp+arg_C]
+.text:100023CA mov     ecx, offset aRecalc_pos ; "Recalc_Pos"
+.text:100023CF mov     eax, [eax+4]
+.text:100023D2
+.text:100023D2 loc_100023D2:
+.text:100023D2 mov     bl, [eax]
+.text:100023D4 mov     dl, bl
+.text:100023D6 cmp     bl, [ecx]
+.text:100023D8 jnz     short loc_100023F6
+.text:100023DA test    dl, dl
+.text:100023DC jz      short loc_100023F2
+.text:100023DE mov     bl, [eax+1]
+.text:100023E1 mov     dl, bl
+.text:100023E3 cmp     bl, [ecx+1]
+.text:100023E6 jnz     short loc_100023F6
+.text:100023E8 add     eax, 2
+.text:100023EB add     ecx, 2
+.text:100023EE test    dl, dl
+.text:100023F0 jnz     short loc_100023D2
+.text:100023F2
+.text:100023F2 loc_100023F2:
+.text:100023F2 xor     eax, eax
+.text:100023F4 jmp     short loc_100023FB
+.text:100023F6
+.text:100023F6 loc_100023F6:
+.text:100023F6 sbb     eax, eax
+.text:100023F8 sbb     eax, 0FFFFFFFFh
+.text:100023FB
+.text:100023FB loc_100023FB:
+.text:100023FB mov     ebx, ds:UF_MOM_set_assoc_double_array
+.text:10002401 test    eax, eax
+.text:10002403 jnz     loc_1000248A
+.text:10002409 lea     ecx, [esp+240h+var_228]
+.text:1000240D push    ecx
+.text:1000240E push    offset a0       ; "0"
+.text:10002413 push    offset aPos     ; "pos"
+.text:10002418 push    esi
+.text:10002419 call    edi ; UF_MOM_ask_assoc_double_array
+.text:1000241B lea     edx, [esp+250h+var_220]
+.text:1000241F push    edx
+.text:10002420 push    offset a1       ; "1"
+.text:10002425 push    offset aPos     ; "pos"
+.text:1000242A push    esi
+.text:1000242B call    edi ; UF_MOM_ask_assoc_double_array
+.text:1000242D lea     eax, [esp+260h+var_218]
+.text:10002431 push    eax
+.text:10002432 push    offset a2       ; "2"
+.text:10002437 push    offset aPos     ; "pos"
+.text:1000243C push    esi
+.text:1000243D call    edi ; UF_MOM_ask_assoc_double_array
+.text:1000243F mov     ecx, dword ptr [esp+270h+var_228+4]
+.text:10002443 mov     edx, dword ptr [esp+270h+var_228]
+.text:10002447 push    ecx
+.text:10002448 push    edx
+.text:10002449 push    offset a0       ; "0"
+.text:1000244E push    offset aCalc_pos	; "calc_pos"
+.text:10002453 push    esi
+.text:10002454 call    ebx ; UF_MOM_set_assoc_double_array
+.text:10002456 mov     eax, dword ptr [esp+284h+var_220+4]
+.text:1000245A mov     ecx, dword ptr [esp+284h+var_220]
+.text:1000245E add     esp, 44h
+.text:10002461 push    eax
+.text:10002462 push    ecx
+.text:10002463 push    offset a1       ; "1"
+.text:10002468 push    offset aCalc_pos	; "calc_pos"
+.text:1000246D push    esi
+.text:1000246E call    ebx ; UF_MOM_set_assoc_double_array
+.text:10002470 mov     edx, dword ptr [esp+254h+var_218+4]
+.text:10002474 mov     eax, dword ptr [esp+254h+var_218]
+.text:10002478 push    edx
+.text:10002479 push    eax
+.text:1000247A push    offset a2       ; "2"
+.text:1000247F push    offset aCalc_pos	; "calc_pos"
+.text:10002484 push    esi
+.text:10002485 call    ebx ; UF_MOM_set_assoc_double_array
+.text:10002487 add     esp, 28h
+.text:1000248A
+.text:1000248A loc_1000248A:
+.text:1000248A mov     ecx, [ebp+arg_C]
+.text:1000248D mov     dword ptr [esp+240h+var_230], offset aRecalc_pos_g43 ; "Recalc_Pos_G43"
+.text:10002495 mov     eax, [ecx+4]
+.text:10002498
+.text:10002498 loc_10002498:
+.text:10002498 mov     dl, [eax]
+.text:1000249A mov     ecx, dword ptr [esp+240h+var_230]
+.text:1000249E mov     [esp+240h+var_231], dl
+.text:100024A2 cmp     dl, [ecx]
+.text:100024A4 jnz     short loc_100024D4
+.text:100024A6 mov     cl, dl
+.text:100024A8 test    cl, cl
+.text:100024AA jz      short loc_100024D0
+.text:100024AC mov     dl, [eax+1]
+.text:100024AF mov     ecx, dword ptr [esp+240h+var_230]
+.text:100024B3 mov     [esp+240h+var_231], dl
+.text:100024B7 cmp     dl, [ecx+1]
+.text:100024BA jnz     short loc_100024D4
+.text:100024BC mov     edx, ecx
+.text:100024BE mov     cl, [esp+240h+var_231]
+.text:100024C2 add     eax, 2
+.text:100024C5 add     edx, 2
+.text:100024C8 test    cl, cl
+.text:100024CA mov     dword ptr [esp+240h+var_230], edx
+.text:100024CE jnz     short loc_10002498
+.text:100024D0
+.text:100024D0 loc_100024D0:
+.text:100024D0 xor     eax, eax
+.text:100024D2 jmp     short loc_100024D9
+.text:100024D4
+.text:100024D4 loc_100024D4:
+.text:100024D4 sbb     eax, eax
+.text:100024D6 sbb     eax, 0FFFFFFFFh
+.text:100024D9
+.text:100024D9 loc_100024D9:
+.text:100024D9 test    eax, eax
+.text:100024DB jnz     loc_10002562
+.text:100024E1 lea     edx, [esp+240h+var_228]
+.text:100024E5 push    edx
+.text:100024E6 push    offset a0       ; "0"
+.text:100024EB push    offset aMcs_goto	; "mcs_goto"
+.text:100024F0 push    esi
+.text:100024F1 call    edi ; UF_MOM_ask_assoc_double_array
+.text:100024F3 lea     eax, [esp+250h+var_220]
+.text:100024F7 push    eax
+.text:100024F8 push    offset a1       ; "1"
+.text:100024FD push    offset aMcs_goto	; "mcs_goto"
+.text:10002502 push    esi
+.text:10002503 call    edi ; UF_MOM_ask_assoc_double_array
+.text:10002505 lea     ecx, [esp+260h+var_218]
+.text:10002509 push    ecx
+.text:1000250A push    offset a2       ; "2"
+.text:1000250F push    offset aMcs_goto	; "mcs_goto"
+.text:10002514 push    esi
+.text:10002515 call    edi ; UF_MOM_ask_assoc_double_array
+.text:10002517 mov     edx, dword ptr [esp+270h+var_228+4]
+.text:1000251B mov     eax, dword ptr [esp+270h+var_228]
+.text:1000251F push    edx
+.text:10002520 push    eax
+.text:10002521 push    offset a0       ; "0"
+.text:10002526 push    offset aCalc_pos	; "calc_pos"
+.text:1000252B push    esi
+.text:1000252C call    ebx ; UF_MOM_set_assoc_double_array
+.text:1000252E mov     ecx, dword ptr [esp+284h+var_220+4]
+.text:10002532 mov     edx, dword ptr [esp+284h+var_220]
+.text:10002536 add     esp, 44h
+.text:10002539 push    ecx
+.text:1000253A push    edx
+.text:1000253B push    offset a1       ; "1"
+.text:10002540 push    offset aCalc_pos	; "calc_pos"
+.text:10002545 push    esi
+.text:10002546 call    ebx ; UF_MOM_set_assoc_double_array
+.text:10002548 mov     eax, dword ptr [esp+254h+var_218+4]
+.text:1000254C mov     ecx, dword ptr [esp+254h+var_218]
+.text:10002550 push    eax
+.text:10002551 push    ecx
+.text:10002552 push    offset a2       ; "2"
+.text:10002557 push    offset aCalc_pos	; "calc_pos"
+.text:1000255C push    esi
+.text:1000255D call    ebx ; UF_MOM_set_assoc_double_array
+.text:1000255F add     esp, 28h
+.text:10002562
+.text:10002562 loc_10002562:
+.text:10002562 mov     edx, [ebp+arg_C]
+.text:10002565 mov     dword ptr [esp+240h+var_230], offset aRecalc_pos_g_0 ; "Recalc_Pos_G43_rap"
+.text:1000256D mov     eax, [edx+4]
+.text:10002570
+.text:10002570 loc_10002570:
+.text:10002570 mov     cl, [eax]
+.text:10002572 mov     edx, dword ptr [esp+240h+var_230]
+.text:10002576 mov     [esp+240h+var_231], cl
+.text:1000257A cmp     cl, [edx]
+.text:1000257C jnz     short loc_100025A0
+.text:1000257E test    cl, cl
+.text:10002580 jz      short loc_1000259C
+.text:10002582 mov     cl, [eax+1]
+.text:10002585 mov     [esp+240h+var_231], cl
+.text:10002589 cmp     cl, [edx+1]
+.text:1000258C jnz     short loc_100025A0
+.text:1000258E add     eax, 2
+.text:10002591 add     edx, 2
+.text:10002594 test    cl, cl
+.text:10002596 mov     dword ptr [esp+240h+var_230], edx
+.text:1000259A jnz     short loc_10002570
+.text:1000259C
+.text:1000259C loc_1000259C:
+.text:1000259C xor     eax, eax
+.text:1000259E jmp     short loc_100025A5
+.text:100025A0
+.text:100025A0 loc_100025A0:
+.text:100025A0 sbb     eax, eax
+.text:100025A2 sbb     eax, 0FFFFFFFFh
+.text:100025A5
+.text:100025A5 loc_100025A5:
+.text:100025A5 test    eax, eax
+.text:100025A7 jnz     loc_1000262E
+.text:100025AD lea     eax, [esp+240h+var_228]
+.text:100025B1 push    eax
+.text:100025B2 push    offset a0       ; "0"
+.text:100025B7 push    offset aMcs_goto	; "mcs_goto"
+.text:100025BC push    esi
+.text:100025BD call    edi ; UF_MOM_ask_assoc_double_array
+.text:100025BF lea     ecx, [esp+250h+var_220]
+.text:100025C3 push    ecx
+.text:100025C4 push    offset a1       ; "1"
+.text:100025C9 push    offset aMcs_goto	; "mcs_goto"
+.text:100025CE push    esi
+.text:100025CF call    edi ; UF_MOM_ask_assoc_double_array
+.text:100025D1 lea     edx, [esp+260h+var_218]
+.text:100025D5 push    edx
+.text:100025D6 push    offset a2       ; "2"
+.text:100025DB push    offset aMcs_goto	; "mcs_goto"
+.text:100025E0 push    esi
+.text:100025E1 call    edi ; UF_MOM_ask_assoc_double_array
+.text:100025E3 mov     eax, dword ptr [esp+270h+var_228+4]
+.text:100025E7 mov     ecx, dword ptr [esp+270h+var_228]
+.text:100025EB push    eax
+.text:100025EC push    ecx
+.text:100025ED push    offset a0       ; "0"
+.text:100025F2 push    offset aPos     ; "pos"
+.text:100025F7 push    esi
+.text:100025F8 call    ebx ; UF_MOM_set_assoc_double_array
+.text:100025FA mov     edx, dword ptr [esp+284h+var_220+4]
+.text:100025FE mov     eax, dword ptr [esp+284h+var_220]
+.text:10002602 add     esp, 44h
+.text:10002605 push    edx
+.text:10002606 push    eax
+.text:10002607 push    offset a1       ; "1"
+.text:1000260C push    offset aPos     ; "pos"
+.text:10002611 push    esi
+.text:10002612 call    ebx ; UF_MOM_set_assoc_double_array
+.text:10002614 mov     ecx, dword ptr [esp+254h+var_218+4]
+.text:10002618 mov     edx, dword ptr [esp+254h+var_218]
+.text:1000261C push    ecx
+.text:1000261D push    edx
+.text:1000261E push    offset a2       ; "2"
+.text:10002623 push    offset aPos     ; "pos"
+.text:10002628 push    esi
+.text:10002629 call    ebx ; UF_MOM_set_assoc_double_array
+.text:1000262B add     esp, 28h
+.text:1000262E
+.text:1000262E loc_1000262E:
+.text:1000262E mov     eax, [ebp+arg_C]
+.text:10002631 mov     dword ptr [esp+240h+var_230], offset aInput_retract ; "INPUT_RETRACT"
+.text:10002639 mov     eax, [eax+4]
+.text:1000263C
+.text:1000263C loc_1000263C:
+.text:1000263C mov     cl, [eax]
+.text:1000263E mov     edx, dword ptr [esp+240h+var_230]
+.text:10002642 mov     [esp+240h+var_231], cl
+.text:10002646 cmp     cl, [edx]
+.text:10002648 jnz     short loc_1000266C
+.text:1000264A test    cl, cl
+.text:1000264C jz      short loc_10002668
+.text:1000264E mov     cl, [eax+1]
+.text:10002651 mov     [esp+240h+var_231], cl
+.text:10002655 cmp     cl, [edx+1]
+.text:10002658 jnz     short loc_1000266C
+.text:1000265A add     eax, 2
+.text:1000265D add     edx, 2
+.text:10002660 test    cl, cl
+.text:10002662 mov     dword ptr [esp+240h+var_230], edx
+.text:10002666 jnz     short loc_1000263C
+.text:10002668
+.text:10002668 loc_10002668:
+.text:10002668 xor     eax, eax
+.text:1000266A jmp     short loc_10002671
+.text:1000266C
+.text:1000266C loc_1000266C:
+.text:1000266C sbb     eax, eax
+.text:1000266E sbb     eax, 0FFFFFFFFh
+.text:10002671
+.text:10002671 loc_10002671:
+.text:10002671 test    eax, eax
+.text:10002673 jnz     short loc_100026F3
+.text:10002675 call    ds:UF_UI_close_listing_window
+.text:1000267B push    1
+.text:1000267D call    ds:UF_UI_lock_ug_access
+.text:10002683 lea     eax, [esp+244h+var_1A8]
+.text:1000268A lea     ecx, [esp+244h+var_1C0]
+.text:10002691 push    eax
+.text:10002692 lea     edx, [esp+248h+var_1B0]
+.text:10002699 push    ecx
+.text:1000269A push    edx
+.text:1000269B lea     eax, [esp+250h+var_1A0]
+.text:100026A2 push    2
+.text:100026A4 push    eax
+.text:100026A5 push    offset dword_100042D4
+.text:100026AA call    ds:uc1608
+.text:100026B0 mov     ecx, [esp+25Ch+var_1BC]
+.text:100026B7 mov     edx, [esp+25Ch+var_1C0]
+.text:100026BE push    ecx
+.text:100026BF push    edx
+.text:100026C0 push    offset aKin_retract_di ;	"kin_retract_distance"
+.text:100026C5 push    esi
+.text:100026C6 call    ds:UF_MOM_set_double
+.text:100026CC mov     eax, [esp+26Ch+var_1B4]
+.text:100026D3 mov     ecx, [esp+26Ch+var_1B8]
+.text:100026DA push    eax
+.text:100026DB push    ecx
+.text:100026DC push    offset aKin_reengage_d ;	"kin_reengage_distance"
+.text:100026E1 push    esi
+.text:100026E2 call    ds:UF_MOM_set_double
+.text:100026E8 push    1
+.text:100026EA call    ds:UF_UI_unlock_ug_access
+.text:100026F0 add     esp, 40h
+.text:100026F3
+.text:100026F3 loc_100026F3:
+.text:100026F3 mov     edx, [ebp+arg_C]
+.text:100026F6 mov     dword ptr [esp+240h+var_230], offset aInput_retract_ ; "INPUT_RETRACT_DIST"
+.text:100026FE mov     eax, [edx+4]
+.text:10002701
+.text:10002701 loc_10002701:
+.text:10002701 mov     cl, [eax]
+.text:10002703 mov     edx, dword ptr [esp+240h+var_230]
+.text:10002707 mov     [esp+240h+var_231], cl
+.text:1000270B cmp     cl, [edx]
+.text:1000270D jnz     short loc_10002731
+.text:1000270F test    cl, cl
+.text:10002711 jz      short loc_1000272D
+.text:10002713 mov     cl, [eax+1]
+.text:10002716 mov     [esp+240h+var_231], cl
+.text:1000271A cmp     cl, [edx+1]
+.text:1000271D jnz     short loc_10002731
+.text:1000271F add     eax, 2
+.text:10002722 add     edx, 2
+.text:10002725 test    cl, cl
+.text:10002727 mov     dword ptr [esp+240h+var_230], edx
+.text:1000272B jnz     short loc_10002701
+.text:1000272D
+.text:1000272D loc_1000272D:
+.text:1000272D xor     eax, eax
+.text:1000272F jmp     short loc_10002736
+.text:10002731
+.text:10002731 loc_10002731:
+.text:10002731 sbb     eax, eax
+.text:10002733 sbb     eax, 0FFFFFFFFh
+.text:10002736
+.text:10002736 loc_10002736:
+.text:10002736 test    eax, eax
+.text:10002738 jnz     loc_10002898
+.text:1000273E push    eax
+.text:1000273F push    offset dword_1000426C
+.text:10002744 call    ds:uc1601
+.text:1000274A lea     eax, [esp+248h+var_54]
+.text:10002751 push    eax
+.text:10002752 push    offset a0       ; "0"
+.text:10002757 push    offset aPrev_mcs_goto ; "prev_mcs_goto"
+.text:1000275C push    esi
+.text:1000275D call    edi ; UF_MOM_ask_assoc_double_array
+.text:1000275F lea     ecx, [esp+258h+var_4C]
+.text:10002766 push    ecx
+.text:10002767 push    offset a1       ; "1"
+.text:1000276C push    offset aPrev_mcs_goto ; "prev_mcs_goto"
+.text:10002771 push    esi
+.text:10002772 call    edi ; UF_MOM_ask_assoc_double_array
+.text:10002774 lea     edx, [esp+268h+var_44]
+.text:1000277B push    edx
+.text:1000277C push    offset a2       ; "2"
+.text:10002781 push    offset aPrev_mcs_goto ; "prev_mcs_goto"
+.text:10002786 push    esi
+.text:10002787 call    edi ; UF_MOM_ask_assoc_double_array
+.text:10002789 lea     eax, [esp+278h+var_3C]
+.text:10002790 push    eax
+.text:10002791 push    offset a0       ; "0"
+.text:10002796 push    offset aPrev_tool_axis ;	"prev_tool_axis"
+.text:1000279B push    esi
+.text:1000279C call    edi ; UF_MOM_ask_assoc_double_array
+.text:1000279E add     esp, 48h
+.text:100027A1 lea     ecx, [esp+240h+var_34]
+.text:100027A8 push    ecx
+.text:100027A9 push    offset a1       ; "1"
+.text:100027AE push    offset aPrev_tool_axis ;	"prev_tool_axis"
+.text:100027B3 push    esi
+.text:100027B4 call    edi ; UF_MOM_ask_assoc_double_array
+.text:100027B6 lea     edx, [esp+250h+var_2C]
+.text:100027BD push    edx
+.text:100027BE push    offset a2       ; "2"
+.text:100027C3 push    offset aPrev_tool_axis ;	"prev_tool_axis"
+.text:100027C8 push    esi
+.text:100027C9 call    edi ; UF_MOM_ask_assoc_double_array
+.text:100027CB lea     eax, [esp+260h+var_1E0]
+.text:100027D2 push    eax
+.text:100027D3 push    offset aKin_retract_di ;	"kin_retract_distance"
+.text:100027D8 push    esi
+.text:100027D9 call    ds:UF_MOM_ask_string
+.text:100027DF mov     ecx, [esp+26Ch+var_1E0]
+.text:100027E6 push    ecx	       ; String
+.text:100027E7 call    ds:atof
+.text:100027ED mov     edx, [esp+270h+var_1E0]
+.text:100027F4 fstp    [esp+270h+var_1E8]
+.text:100027FB push    edx
+.text:100027FC call    ds:UF_free
+.text:10002802 fld     [esp+274h+var_3C]
+.text:10002809 fmul    [esp+274h+var_1E8]
+.text:10002810 fadd    [esp+274h+var_54]
+.text:10002817 fstp    [esp+274h+var_228]
+.text:1000281B fld     [esp+274h+var_34]
+.text:10002822 fmul    [esp+274h+var_1E8]
+.text:10002829 mov     eax, dword ptr [esp+274h+var_228+4]
+.text:1000282D mov     ecx, dword ptr [esp+274h+var_228]
+.text:10002831 push    eax
+.text:10002832 push    ecx
+.text:10002833 fadd    [esp+27Ch+var_4C]
+.text:1000283A push    offset a0       ; "0"
+.text:1000283F push    offset aPos     ; "pos"
+.text:10002844 push    esi
+.text:10002845 fstp    [esp+288h+var_220]
+.text:10002849 fld     [esp+288h+var_2C]
+.text:10002850 fmul    [esp+288h+var_1E8]
+.text:10002857 fadd    [esp+288h+var_44]
+.text:1000285E fstp    [esp+288h+var_218]
+.text:10002862 call    ebx ; UF_MOM_set_assoc_double_array
+.text:10002864 mov     edx, dword ptr [esp+288h+var_220+4]
+.text:10002868 mov     eax, dword ptr [esp+288h+var_220]
+.text:1000286C add     esp, 48h
+.text:1000286F push    edx
+.text:10002870 push    eax
+.text:10002871 push    offset a1       ; "1"
+.text:10002876 push    offset aPos     ; "pos"
+.text:1000287B push    esi
+.text:1000287C call    ebx ; UF_MOM_set_assoc_double_array
+.text:1000287E mov     ecx, dword ptr [esp+254h+var_218+4]
+.text:10002882 mov     edx, dword ptr [esp+254h+var_218]
+.text:10002886 push    ecx
+.text:10002887 push    edx
+.text:10002888 push    offset a2       ; "2"
+.text:1000288D push    offset aPos     ; "pos"
+.text:10002892 push    esi
+.text:10002893 call    ebx ; UF_MOM_set_assoc_double_array
+.text:10002895 add     esp, 28h
+.text:10002898
+.text:10002898 loc_10002898:
+.text:10002898 mov     eax, [ebp+arg_C]
+.text:1000289B mov     edi, offset aUnload ; "UNLOAD"
+.text:100028A0 mov     eax, [eax+4]
+.text:100028A3
+.text:100028A3 loc_100028A3:
+.text:100028A3 mov     dl, [eax]
+.text:100028A5 mov     bl, [edi]
+.text:100028A7 mov     cl, dl
+.text:100028A9 cmp     dl, bl
+.text:100028AB jnz     short loc_100028CB
+.text:100028AD test    cl, cl
+.text:100028AF jz      short loc_100028C7
+.text:100028B1 mov     dl, [eax+1]
+.text:100028B4 mov     bl, [edi+1]
+.text:100028B7 mov     cl, dl
+.text:100028B9 cmp     dl, bl
+.text:100028BB jnz     short loc_100028CB
+.text:100028BD add     eax, 2
+.text:100028C0 add     edi, 2
+.text:100028C3 test    cl, cl
+.text:100028C5 jnz     short loc_100028A3
+.text:100028C7
+.text:100028C7 loc_100028C7:
+.text:100028C7 xor     eax, eax
+.text:100028C9 jmp     short loc_100028D0
+.text:100028CB
+.text:100028CB loc_100028CB:
+.text:100028CB sbb     eax, eax
+.text:100028CD sbb     eax, 0FFFFFFFFh
+.text:100028D0
+.text:100028D0 loc_100028D0:
+.text:100028D0 test    eax, eax
+.text:100028D2 jnz     short loc_100028D9
+.text:100028D4 mov     dword_100052B4, eax
+.text:100028D9
+.text:100028D9 loc_100028D9:
+.text:100028D9 lea     eax, [esp+240h+Dest]
+.text:100028E0 lea     ecx, [esp+240h+var_24]
+.text:100028E7 push    eax
+.text:100028E8 push    ecx
+.text:100028E9 push    esi
+.text:100028EA call    ds:UF_MOM_set_string
+.text:100028F0 add     esp, 0Ch
+.text:100028F3 call    ds:UF_terminate
+.text:100028F9 pop     edi
+.text:100028FA pop     esi
+.text:100028FB xor     eax, eax
+.text:100028FD pop     ebx
+.text:100028FE mov     esp, ebp
+.text:10002900 pop     ebp
+.text:10002901 retn
+.text:10002901 sub_10001090 endp
+.text:10002901
+.text:10002902 align 10h
+.text:10002910 ; Exported entry	  3. ufusr_ask_unload
+.text:10002910
+.text:10002910
+.text:10002910
+.text:10002910 public ufusr_ask_unload
+.text:10002910 ufusr_ask_unload	proc near
+.text:10002910 mov     eax, 3
+.text:10002915 retn
+.text:10002915 ufusr_ask_unload	endp
+.text:10002915
+.text:10002916 align 10h
+.text:10002920
+.text:10002920
+.text:10002920
+.text:10002920 sub_10002920 proc near
+.text:10002920
+.text:10002920 VolumeSerialNumber= dword ptr -82Ch
+.text:10002920 var_828=	dword ptr -828h
+.text:10002920 var_824=	dword ptr -824h
+.text:10002920 var_820=	dword ptr -820h
+.text:10002920 var_81C=	dword ptr -81Ch
+.text:10002920 var_818=	dword ptr -818h
+.text:10002920 var_814=	dword ptr -814h
+.text:10002920 var_810=	dword ptr -810h
+.text:10002920 var_80C=	dword ptr -80Ch
+.text:10002920 var_808=	dword ptr -808h
+.text:10002920 var_804=	dword ptr -804h
+.text:10002920 var_800=	dword ptr -800h
+.text:10002920 var_7FC=	dword ptr -7FCh
+.text:10002920 var_7F8=	dword ptr -7F8h
+.text:10002920 var_7F4=	dword ptr -7F4h
+.text:10002920 var_7F0=	dword ptr -7F0h
+.text:10002920 var_7EC=	dword ptr -7ECh
+.text:10002920 var_7E8=	dword ptr -7E8h
+.text:10002920 var_7E4=	dword ptr -7E4h
+.text:10002920 var_7E0=	dword ptr -7E0h
+.text:10002920 var_7DC=	dword ptr -7DCh
+.text:10002920 MaximumComponentLength= dword ptr -7D8h
+.text:10002920 FileSystemFlags=	dword ptr -7D4h
+.text:10002920 FileSystemNameBuffer= byte ptr -7D0h
+.text:10002920 VolumeNameBuffer= byte ptr -3E8h
+.text:10002920
+.text:10002920 sub     esp, 82Ch
+.text:10002926 lea     eax, [esp+82Ch+FileSystemNameBuffer]
+.text:1000292A push    3E8h	       ; nFileSystemNameSize
+.text:1000292F lea     ecx, [esp+830h+FileSystemFlags]
+.text:10002933 push    eax	       ; lpFileSystemNameBuffer
+.text:10002934 lea     edx, [esp+834h+MaximumComponentLength]
+.text:10002938 push    ecx	       ; lpFileSystemFlags
+.text:10002939 lea     eax, [esp+838h+VolumeSerialNumber]
+.text:1000293D push    edx	       ; lpMaximumComponentLength
+.text:1000293E push    eax	       ; lpVolumeSerialNumber
+.text:1000293F lea     ecx, [esp+840h+VolumeNameBuffer]
+.text:10002946 push    3E8h	       ; nVolumeNameSize
+.text:1000294B push    ecx	       ; lpVolumeNameBuffer
+.text:1000294C push    offset RootPathName ; "C:\\"
+.text:10002951 mov     [esp+84Ch+var_828], 0BCEC3EDAh
+.text:10002959 mov     [esp+84Ch+var_824], 1C6992FBh
+.text:10002961 mov     [esp+84Ch+var_820], 9C21B9EDh
+.text:10002969 mov     [esp+84Ch+var_81C], 0C4DF5004h
+.text:10002971 mov     [esp+84Ch+var_818], 6CF7C9A2h
+.text:10002979 mov     [esp+84Ch+var_814], 4C732EC5h
+.text:10002981 mov     [esp+84Ch+var_810], 0C80B1F50h
+.text:10002989 mov     [esp+84Ch+var_80C], 343C618Fh
+.text:10002991 mov     [esp+84Ch+var_808], 0D4008323h
+.text:10002999 mov     [esp+84Ch+var_804], 0F4A85B70h
+.text:100029A1 mov     [esp+84Ch+var_800], 0E82A33F0h
+.text:100029A9 mov     [esp+84Ch+var_7FC], 0FC5BF203h
+.text:100029B1 mov     [esp+84Ch+var_7F8], 0F4203A3Bh
+.text:100029B9 mov     [esp+84Ch+var_7F4], 709AC60Fh
+.text:100029C1 mov     [esp+84Ch+var_7F0], 0E40FAFFFh
+.text:100029C9 mov     [esp+84Ch+var_7EC], 0CCBFB1B7h
+.text:100029D1 mov     [esp+84Ch+var_7E8], 2CCB6526h
+.text:100029D9 mov     [esp+84Ch+var_7E4], 40E5A14Dh
+.text:100029E1 mov     [esp+84Ch+var_7E0], 0B0B89514h
+.text:100029E9 mov     [esp+84Ch+var_7DC], 1
+.text:100029F1 call    ds:GetVolumeInformationA
+.text:100029F7 mov     edx, [esp+82Ch+VolumeSerialNumber]
+.text:100029FB xor     eax, eax
+.text:100029FD lea     ecx, [esp+82Ch+var_828]
+.text:10002A01
+.text:10002A01 loc_10002A01:
+.text:10002A01 cmp     edx, [ecx]
+.text:10002A03 jz      short loc_10002A17
+.text:10002A05 inc     eax
+.text:10002A06 add     ecx, 4
+.text:10002A09 cmp     eax, 14h
+.text:10002A0C jl      short loc_10002A01
+.text:10002A0E xor     eax, eax
+.text:10002A10 add     esp, 82Ch
+.text:10002A16 retn
+.text:10002A17
+.text:10002A17 loc_10002A17:
+.text:10002A17 mov     eax, 1
+.text:10002A1C add     esp, 82Ch
+.text:10002A22 retn
+.text:10002A22 sub_10002920 endp
+.text:10002A22
+.text:10002A23 align 10h
+.text:10002A30
+.text:10002A30
+.text:10002A30 ; Attributes: thunk
+.text:10002A30
+.text:10002A30 _ftol proc near
+.text:10002A30 jmp     ds:__imp__ftol
+.text:10002A30 _ftol endp
+.text:10002A30
+.text:10002A36
+.text:10002A36
+.text:10002A36 ; Attributes: library function
+.text:10002A36
+.text:10002A36 ; __stdcall _CRT_INIT(x,	x, x)
+.text:10002A36 __CRT_INIT@12 proc near
+.text:10002A36
+.text:10002A36 arg_4= dword ptr	 8
+.text:10002A36
+.text:10002A36 mov     eax, [esp+arg_4]
+.text:10002A3A test    eax, eax
+.text:10002A3C jnz     short loc_10002A4C
+.text:10002A3E cmp     dword_100052B8, eax
+.text:10002A44 jle     short loc_10002A74
+.text:10002A46 dec     dword_100052B8
+.text:10002A4C
+.text:10002A4C loc_10002A4C:
+.text:10002A4C mov     ecx, ds:_adjust_fdiv
+.text:10002A52 cmp     eax, 1
+.text:10002A55 mov     ecx, [ecx]
+.text:10002A57 mov     dword_100052BC, ecx
+.text:10002A5D jnz     short loc_10002A9E
+.text:10002A5F push    80h	       ; Size
+.text:10002A64 call    ds:malloc
+.text:10002A6A test    eax, eax
+.text:10002A6C pop     ecx
+.text:10002A6D mov     Memory, eax
+.text:10002A72 jnz     short loc_10002A78
+.text:10002A74
+.text:10002A74 loc_10002A74:
+.text:10002A74 xor     eax, eax
+.text:10002A76 jmp     short locret_10002ADE
+.text:10002A78
+.text:10002A78 loc_10002A78:
+.text:10002A78 and     dword ptr [eax],	0
+.text:10002A7B mov     eax, Memory
+.text:10002A80 push    offset dword_10004004
+.text:10002A85 push    offset dword_10004000
+.text:10002A8A mov     dword_100052C0, eax
+.text:10002A8F call    _initterm
+.text:10002A94 inc     dword_100052B8
+.text:10002A9A pop     ecx
+.text:10002A9B pop     ecx
+.text:10002A9C jmp     short loc_10002ADB
+.text:10002A9E
+.text:10002A9E loc_10002A9E:
+.text:10002A9E test    eax, eax
+.text:10002AA0 jnz     short loc_10002ADB
+.text:10002AA2 mov     eax, Memory
+.text:10002AA7 test    eax, eax
+.text:10002AA9 jz      short loc_10002ADB
+.text:10002AAB mov     ecx, dword_100052C0
+.text:10002AB1 push    esi
+.text:10002AB2 lea     esi, [ecx-4]
+.text:10002AB5
+.text:10002AB5 loc_10002AB5:
+.text:10002AB5 cmp     esi, eax
+.text:10002AB7 jb      short loc_10002ACB
+.text:10002AB9 mov     ecx, [esi]
+.text:10002ABB test    ecx, ecx
+.text:10002ABD jz      short loc_10002AC6
+.text:10002ABF call    ecx
+.text:10002AC1 mov     eax, Memory
+.text:10002AC6
+.text:10002AC6 loc_10002AC6:
+.text:10002AC6 sub     esi, 4
+.text:10002AC9 jmp     short loc_10002AB5
+.text:10002ACB
+.text:10002ACB loc_10002ACB:	       ; Memory
+.text:10002ACB push    eax
+.text:10002ACC call    ds:free
+.text:10002AD2 and     Memory, 0
+.text:10002AD9 pop     ecx
+.text:10002ADA pop     esi
+.text:10002ADB
+.text:10002ADB loc_10002ADB:
+.text:10002ADB push    1
+.text:10002ADD pop     eax
+.text:10002ADE
+.text:10002ADE locret_10002ADE:
+.text:10002ADE retn    0Ch
+.text:10002ADE __CRT_INIT@12 endp
+.text:10002ADE
+.text:10002AE1 ; [0000009D BYTES: COLLAPSED FUNCTION DllEntryPoint. PRESS KEYPAD "+" TO	EXPAND]
+.text:10002B7E ; [00000006 BYTES: COLLAPSED FUNCTION _initterm.	PRESS KEYPAD "+" TO EXPAND]
+.text:10002B84
+.text:10002B84
+.text:10002B84
+.text:10002B84 ; BOOL __stdcall	DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
+.text:10002B84 _DllMain@12 proc	near
+.text:10002B84
+.text:10002B84 hLibModule= dword ptr  4
+.text:10002B84 fdwReason= dword	ptr  8
+.text:10002B84 lpvReserved= dword ptr  0Ch
+.text:10002B84
+.text:10002B84 cmp     [esp+fdwReason],	1
+.text:10002B89 jnz     short loc_10002B9E
+.text:10002B8B cmp     dword_100052C8, 0
+.text:10002B92 jnz     short loc_10002B9E
+.text:10002B94 push    [esp+hLibModule]	; hLibModule
+.text:10002B98 call    ds:DisableThreadLibraryCalls
+.text:10002B9E
+.text:10002B9E loc_10002B9E:
+.text:10002B9E push    1
+.text:10002BA0 pop     eax
+.text:10002BA1 retn    0Ch
+.text:10002BA1 _DllMain@12 endp
+.text:10002BA1
+.text:10002BA4 align 80h
+.text:10002BA4 _text ends
+.text:10002BA4
+.idata:10003000	; Section 2. (virtual address 00003000)
+.idata:10003000	; Virtual size			: 00000461 (   1121.)
+.idata:10003000	; Section size in file		: 00001000 (   4096.)
+.idata:10003000	; Offset to raw	data for section: 00003000
+.idata:10003000	; Flags	40000040: Data Readable
+.idata:10003000	; Alignment	: default
+.idata:10003000	;
+.idata:10003000	; Imports from KERNEL32.dll
+.idata:10003000	;
+.idata:10003000
+.idata:10003000	; Segment type:	Externs
+.idata:10003000	; _idata
+.idata:10003000	; BOOL __stdcall GetVolumeInformationA(LPCSTR lpRootPathName, LPSTR lpVolumeNameBuffer,	DWORD nVolumeNameSize, LPDWORD lpVolumeSerialNumber, LPDWORD lpMaximumComponentLength, LPDWORD lpFileSystemFlags, LPSTR	lpFileSystemNameBuffer,	DWORD nFileSystemNameSize)
+.idata:10003000	extrn GetVolumeInformationA:dword
+.idata:10003004	; BOOL __stdcall DisableThreadLibraryCalls(HMODULE hLibModule)
+.idata:10003004	extrn DisableThreadLibraryCalls:dword
+.idata:10003008
+.idata:1000300C	;
+.idata:1000300C	; Imports from MSVCRT.dll
+.idata:1000300C	;
+.idata:1000300C	; void __cdecl free(void *Memory)
+.idata:1000300C	extrn free:dword
+.idata:10003010	extrn __imp__ftol:dword
+.idata:10003014	; int sprintf(char *Dest, const	char *Format, ...)
+.idata:10003014	extrn sprintf:dword
+.idata:10003018	; double __cdecl atof(const char *String)
+.idata:10003018	extrn atof:dword
+.idata:1000301C	; void *__cdecl	malloc(size_t Size)
+.idata:1000301C	extrn malloc:dword
+.idata:10003020	extrn _adjust_fdiv:dword
+.idata:10003024	extrn __imp__initterm:dword
+.idata:10003028
+.idata:1000302C	;
+.idata:1000302C	; Imports from libufun.dll
+.idata:1000302C	;
+.idata:1000302C	extrn UF_MOM_ask_string:dword
+.idata:10003030	extrn UF_MOM_execute_command:dword
+.idata:10003034	extrn UF_MOM_set_assoc_double_array:dword
+.idata:10003038	extrn UF_terminate:dword
+.idata:1000303C	extrn UF_MOM_extend_xlator:dword
+.idata:10003040	extrn UF_UI_close_listing_window:dword
+.idata:10003044	extrn UF_MOM_set_double:dword
+.idata:10003048	extrn UF_free:dword
+.idata:1000304C	extrn UF_MOM_set_string:dword
+.idata:10003050	extrn UF_is_initialized:dword
+.idata:10003054	extrn UF_initialize:dword
+.idata:10003058	extrn UF_MOM_ask_interp_from_param:dword
+.idata:1000305C	extrn UF_MOM_ask_mom:dword
+.idata:10003060	extrn UF_MOM_ask_assoc_double_array:dword
+.idata:10003064
+.idata:10003068	;
+.idata:10003068	; Imports from libugopenint.dll
+.idata:10003068	;
+.idata:10003068	extrn UF_UI_display_nonmodal_msg:dword
+.idata:1000306C	extrn UF_UI_lock_ug_access:dword
+.idata:10003070	extrn uc1608:dword
+.idata:10003074	extrn UF_UI_unlock_ug_access:dword
+.idata:10003078	extrn uc1601:dword
+.idata:10003078
+.rdata:1000307C
+.rdata:1000307C	; Segment type:	Pure data
+.rdata:1000307C	; Segment permissions: Read
+.rdata:1000307C	_rdata segment para public 'DATA' use32
+.rdata:1000307C	assume cs:_rdata
+.rdata:1000307C	;org 1000307Ch
+.rdata:1000307C	align 10h
+.rdata:10003080	dbl_10003080 dq	0.0
+.rdata:10003088	dbl_10003088 dq	8.726646259971648e-3
+.rdata:10003090	dbl_10003090 dq	1.74532925199433e-2
+.rdata:10003098	dd 30FCh, 2 dup(0)
+.rdata:100030A4	dd 3194h, 3000h, 3128h,	2 dup(0)
+.rdata:100030B8	dd 32DEh, 302Ch, 3164h,	2 dup(0)
+.rdata:100030CC	dd 334Eh, 3068h, 3108h,	2 dup(0)
+.rdata:100030E0	dd 337Ah, 300Ch, 5 dup(0)
+.rdata:100030FC	dd 317Ch, 33B4h, 0
+.rdata:10003108	dd 3386h, 3372h, 3368h,	3360h, 339Ah, 33A4h
+.rdata:10003108	dd 338Eh, 0
+.rdata:10003128	dd 3290h, 32A4h, 3270h,	31A2h, 31B2h, 3252h
+.rdata:10003128	dd 323Eh, 3234h, 3220h,	320Ch, 31FCh, 31DCh
+.rdata:10003128	dd 31CAh, 32BEh, 0
+.rdata:10003164	dd 3330h, 3318h, 330Eh,	32F4h, 32EAh, 0
+.rdata:1000317C	dd 65470177h, 6C6F5674h, 49656D75h, 726F666Eh
+.rdata:1000317C	dd 6974616Dh, 416E6Fh, 4E52454Bh, 32334C45h
+.rdata:1000317C	dd 6C6C642Eh, 144D0000h, 745F4655h, 696D7265h
+.rdata:1000317C	dd 6574616Eh, 0A530000h, 4D5F4655h, 655F4D4Fh
+.rdata:1000317C	dd 6E657478h, 6C785F64h, 726F7461h, 0A4F0000h
+.rdata:1000317C	dd 4D5F4655h, 615F4D4Fh, 6D5F6B73h, 6D6Fh
+.rdata:1000317C	dd 46550A4Eh, 4D4F4D5Fh, 6B73615Fh, 746E695Fh
+.rdata:1000317C	dd 5F707265h, 6D6F7266h, 7261705Fh, 6D61h
+.rdata:1000317C	dd 4655143Ch, 696E695Fh, 6C616974h, 657A69h
+.rdata:1000317C	dd 4655143Dh, 5F73695Fh, 74696E69h, 696C6169h
+.rdata:1000317C	dd 64657Ah, 46550A5Bh, 4D4F4D5Fh, 7465735Fh
+.rdata:1000317C	dd 7274735Fh, 676E69h, 46551433h, 6572665Fh
+.rdata:1000317C	dd 0A570065h, 4D5F4655h, 735F4D4Fh, 645F7465h
+.rdata:1000317C	dd 6C62756Fh, 130C0065h, 555F4655h, 6C635F49h
+.rdata:1000317C	dd 5F65736Fh, 7473696Ch, 5F676E69h, 646E6977h
+.rdata:1000317C	dd 776Fh, 46550A54h, 4D4F4D5Fh,	7465735Fh
+.rdata:1000317C	dd 7373615Fh, 645F636Fh, 6C62756Fh, 72615F65h
+.rdata:1000317C	dd 796172h, 46550A50h, 4D4F4D5Fh, 6B73615Fh
+.rdata:1000317C	dd 7274735Fh, 676E69h, 46550A52h, 4D4F4D5Fh
+.rdata:1000317C	dd 6578655Fh, 65747563h, 6D6F635Fh, 646E616Dh
+.rdata:1000317C	dd 0A480000h, 4D5F4655h, 615F4D4Fh, 615F6B73h
+.rdata:1000317C	dd 636F7373h, 756F645Fh, 5F656C62h, 61727261h
+.rdata:1000317C	dd 696C0079h, 75667562h, 6C642E6Eh, 13F006Ch
+.rdata:1000317C	dd 36316375h, 3130h, 4655011Eh,	5F49555Fh
+.rdata:1000317C	dd 6F6C6E75h, 755F6B63h, 63615F67h, 73736563h
+.rdata:1000317C	dd 1430000h, 36316375h,	3830h, 465500F0h
+.rdata:1000317C	dd 5F49555Fh, 6B636F6Ch, 5F67755Fh, 65636361h
+.rdata:1000317C	dd 7373h, 465500E5h, 5F49555Fh,	70736964h
+.rdata:1000317C	dd 5F79616Ch, 6D6E6F6Eh, 6C61646Fh, 67736D5Fh
+.rdata:1000317C	dd 696C0000h, 6F677562h, 696E6570h, 642E746Eh
+.rdata:1000317C	dd 6C6Ch, 7461023Ch, 666Fh, 707302B2h, 746E6972h
+.rdata:1000317C	dd 0F10066h, 6F74665Fh,	534D006Ch, 54524356h
+.rdata:1000317C	dd 6C6C642Eh, 25E0000h,	65657266h, 10F0000h
+.rdata:1000317C	dd 696E695Fh, 72657474h, 291006Dh, 6C6C616Dh
+.rdata:1000317C	dd 636Fh, 615F009Dh, 73756A64h,	64665F74h
+.rdata:1000317C	dd 7669h, 6944005Dh, 6C626173h,	72685465h
+.rdata:1000317C	dd 4C646165h, 61726269h, 61437972h, 736C6Ch
+.rdata:1000317C	dd 0
+.rdata:100033D4	a?kbk db '?ЄbK',0
+.rdata:100033D9	align 4
+.rdata:100033DC	db  16h
+.rdata:100033DD	db 34h,	2 dup(0)
+.rdata:100033E0	db    1
+.rdata:100033E1	align 4
+.rdata:100033E4	db    3
+.rdata:100033E5	align 4
+.rdata:100033E8	db    3
+.rdata:100033E9	align 4
+.rdata:100033EC	db 0F8h	; ш
+.rdata:100033ED	db 33h,	2 dup(0)
+.rdata:100033F0	db    4
+.rdata:100033F1	db 34h,	2 dup(0)
+.rdata:100033F4	db  10h
+.rdata:100033F5	db 34h,	2 dup(0)
+.rdata:100033F8	db    0
+.rdata:100033F9	db 10h,	2 dup(0)
+.rdata:100033FC	db  10h
+.rdata:100033FD	db 10h,	2 dup(0)
+.rdata:10003400	db  10h
+.rdata:10003401	db 29h,	2 dup(0)
+.rdata:10003404	db  23h	; #
+.rdata:10003405	db 34h,	2 dup(0)
+.rdata:10003408	db  35h	; 5
+.rdata:10003409	db 34h,	2 dup(0)
+.rdata:1000340C	db  50h	; P
+.rdata:1000340D	db 34h,	2 dup(0)
+.rdata:10003410	db    0
+.rdata:10003411	align 2
+.rdata:10003412	dw 1
+.rdata:10003414	db    2
+.rdata:10003415	align 2
+.rdata:10003416	aMom_user_dll db 'mom_user.dll',0
+.rdata:10003423	aNxsigningresou	db 'NXSigningResource',0
+.rdata:10003435	aEntry_rtv_mom_	db 'entry_rtv_mom_cp_part_attr',0
+.rdata:10003450	aUfusr_ask_unlo	db 'ufusr_ask_unload',0
+.rdata:10003461	align 200h
+.rdata:10003461	_rdata ends
+.rdata:10003461
+.data:10004000 ; Section 3. (virtual address 00004000)
+.data:10004000 ; Virtual size		       : 000012CC (   4812.)
+.data:10004000 ; Section size in file	       : 00002000 (   8192.)
+.data:10004000 ; Offset	to raw data for	section: 00004000
+.data:10004000 ; Flags C0000040: Data Readable Writable
+.data:10004000 ; Alignment     : default
+.data:10004000
+.data:10004000 ; Segment type: Pure data
+.data:10004000 ; Segment permissions: Read/Write
+.data:10004000 _data segment para public 'DATA' use32
+.data:10004000 assume cs:_data
+.data:10004000 ;org 10004000h
+.data:10004000 dword_10004000 dd 0
+.data:10004004 dword_10004004 dd 3 dup(0)
+.data:10004010 dd 5541584Eh, 4C424854h,	214B434Fh, 31203101h
+.data:10004010 dd 37323830h, 2D203739h,	43534A20h, 4F534320h
+.data:10004010 dd 52205446h, 584E4345h,	3549484Ah, 54305630h
+.data:10004010 dd 361E2802h, 0DB7A296Dh, 0D2EE1679h, 0CDF57675h
+.data:10004010 dd 6FE62938h, 0B6D4542h,	0F85097C5h, 0DD5BC050h
+.data:10004010 dd 0BB3B363Ah, 805AEEC4h, 2802692Fh, 18F22777h
+.data:10004010 dd 0C56BDCEEh, 77C22246h, 0AB8A8386h, 0F41F10D1h
+.data:10004010 dd 45278A0Eh, 0C3B390AAh, 7ED76821h, 565BEF54h
+.data:10004010 dd 0F45164B0h
+.data:10004094 db '                                   '
+.data:10004094 db '                                   '
+.data:10004094 db '                                   '
+.data:10004094 db '                                   '
+.data:10004094 db '                                   '
+.data:10004094 db '                                   '
+.data:10004094 db '                                   '
+.data:10004094 db '                                   '
+.data:10004094 db '                                   '
+.data:10004094 db '                                   '
+.data:10004094 db '                                   '
+.data:10004094 db '      NXAUTHBLOCK',0
+.data:10004227 align 4
+.data:10004228 aExtn_rtv_mom_c db 'EXTN_rtv_mom_cp_part_attr',0
+.data:10004242 align 4
+.data:10004244 aUnload db 'UNLOAD',0
+.data:1000424B align 4
+.data:1000424C aPrev_tool_axis db 'prev_tool_axis',0
+.data:1000425B align 4
+.data:1000425C aPrev_mcs_goto db 'prev_mcs_goto',0
+.data:1000426A align 4
+.data:1000426C dword_1000426C dd 0E4EEE2C2h, 0F1E8E420h, 0F6EDE0F2h, 0EE20E9E8h
+.data:1000426C dd 0E4EEE2F2h, 20E820E0h, 0E7E5F0E2h, 0FFE8EDE0h
+.data:1000426C dd 0
+.data:10004290 aInput_retract_ db 'INPUT_RETRACT_DIST',0
+.data:100042A3 align 4
+.data:100042A4 aKin_reengage_d db 'kin_reengage_distance',0
+.data:100042BA align 4
+.data:100042BC aKin_retract_di db 'kin_retract_distance',0
+.data:100042D1 align 4
+.data:100042D4 dword_100042D4 dd 0E4E5E2C2h, 20E5F2E8h,	0F7E0EDE7h, 0FFE8EDE5h
+.data:100042D4 dd 0E2F2EE20h, 20E0E4EEh, 0F0E220E8h, 0EDE0E7E5h
+.data:100042D4 dd 0E820FFE8h, 0F0F2F1EDh, 0EDE5ECF3h, 0E0F2h
+.data:10004304 aInput_retract db 'INPUT_RETRACT',0
+.data:10004312 align 4
+.data:10004314 aRecalc_pos_g_0 db 'Recalc_Pos_G43_rap',0
+.data:10004327 align 4
+.data:10004328 aRecalc_pos_g43 db 'Recalc_Pos_G43',0
+.data:10004337 align 4
+.data:10004338 aCalc_pos db 'calc_pos',0
+.data:10004341 align 4
+.data:10004344 aRecalc_pos db 'Recalc_Pos',0
+.data:1000434F align 10h
+.data:10004350 aPlane_moving2_ db 'PLANE_moving2_dynamic',0
+.data:10004366 align 4
+.data:10004368 ; char aMom_output__31[]
+.data:10004368 aMom_output__31 db 'MOM_output_literal "G0 G90 X%.3lf Y'
+.data:10004368 db '%.3lf"',0
+.data:10004392 align 4
+.data:10004394 ; char aMom_output__30[]
+.data:10004394 aMom_output__30 db 'MOM_output_literal "G01 G54.2 P1 G9'
+.data:10004394 db '1 X\133-\043780\135 Y\133-\043781\1'
+.data:10004394 db '35 Z\133-\043782\135 F10000. "',0
+.data:100043F9 align 4
+.data:100043FC aPlane_moving2 db 'PLANE_moving2',0
+.data:1000440A align 4
+.data:1000440C ; char aMom_output__29[]
+.data:1000440C aMom_output__29 db 'MOM_output_literal "G90 G0 X%.3lf Y'
+.data:1000440C db '%.3lf "',0
+.data:10004437 align 4
+.data:10004438 ; char aMom_output__28[]
+.data:10004438 aMom_output__28 db 'MOM_output_literal "G01 G54.2 P1 G9'
+.data:10004438 db '1 X\133-\043780\135 Y\133-\043781\1'
+.data:10004438 db '35 Z\133-\043782 - \043\13360000 + '
+.data:10004438 db '\0433020\135\135 F10000. "',0
+.data:100044BC ; char aMom_output__27[]
+.data:100044BC aMom_output__27 db 'MOM_output_literal "G54"',0
+.data:100044D5 align 4
+.data:100044D8 aPlane_moving db	'PLANE_moving',0
+.data:100044E5 align 4
+.data:100044E8 ; char aMom_output__26[]
+.data:100044E8 aMom_output__26 db 'MOM_output_literal "G01 G54.2 P0 G9'
+.data:100044E8 db '1 X\133\043780\135 Y\133\043781\135'
+.data:100044E8 db ' Z\133\043782\135 F10000. "',0
+.data:1000454A align 4
+.data:1000454C aPlane_end db 'PLANE_END',0
+.data:10004556 align 4
+.data:10004558 ; char aMom_output__25[]
+.data:10004558 aMom_output__25 db 'MOM_output_literal "G54.2 P1 G01 X\'
+.data:10004558 db '133-ABS\133\0435521\135+315.-5.\135'
+.data:10004558 db ' Y\133-ABS\133\0435522\135+315.-5.\'
+.data:10004558 db '135 Z\133-ABS\133\0435523\135+690.-'
+.data:10004558 db '5.\135 A0.C0. F10000. "',0
+.data:100045FC aPlane2 db 'PLANE2',0
+.data:10004603 align 4
+.data:10004604 ; char aPutsOfileG68_3[]
+.data:10004604 aPutsOfileG68_3 db 'puts $ofile  "G68 X\133\043800\135 '
+.data:10004604 db 'Y\133\043801\135 Z0 I0 J1 K0 R%.3lf'
+.data:10004604 db '"',0
+.data:1000464C ; char aPutsOfileG68_2[]
+.data:1000464C aPutsOfileG68_2 db 'puts $ofile  "G68 X\133\043800\135 '
+.data:1000464C db 'Y\133\043801\135 Z0 I0 J0 K1 R\133-'
+.data:1000464C db '\043818\135"',0
+.data:1000469F align 10h
+.data:100046A0 ; char aPutsOfileG69[]
+.data:100046A0 aPutsOfileG69 db	'puts $ofile  "G69"',0
+.data:100046B3 align 4
+.data:100046B4 ; char aPutsOfileG0X_3[]
+.data:100046B4 aPutsOfileG0X_3 db 'puts $ofile  "G0 X%.3lf Y%.3lf"',0
+.data:100046D4 ; char aPutsOfileG68_1[]
+.data:100046D4 aPutsOfileG68_1 db 'puts $ofile  "G68 X\133-\043810+\04'
+.data:100046D4 db '3800\135 Y\133\043801\135 Z\133-\04'
+.data:100046D4 db '3812\135 I0 J1 K0 R%.3lf"',0
+.data:10004734 ; char aPutsOfileG68_0[]
+.data:10004734 aPutsOfileG68_0 db 'puts $ofile  "G68 X\133\043810+\043'
+.data:10004734 db '800\135 Y\133\043801\135 Z\133-\043'
+.data:10004734 db '812\135 I0 J1 K0 R%.3lf"',0
+.data:10004793 align 4
+.data:10004794 ; char aPutsOfileG68X1[]
+.data:10004794 aPutsOfileG68X1 db 'puts $ofile  "G68 X\133\043810+\043'
+.data:10004794 db '800\135 Y\133\043801\135 Z\133-\043'
+.data:10004794 db '812\135 I0 J0 K1 R\133-\043818\135"'
+.data:10004794 db 0
+.data:100047FE align 10h
+.data:10004800 ; char aPutsOfileG65_0[]
+.data:10004800 aPutsOfileG65_0 db 'puts $ofile  "G65 P9998 C\133\04381'
+.data:10004800 db '8+%.3lf\135 Q0"',0
+.data:10004833 align 4
+.data:10004834 ; char aPutsOfileG65P9[]
+.data:10004834 aPutsOfileG65P9 db 'puts $ofile  "G65 P9998 C\133\04381'
+.data:10004834 db '8+%.3lf\135 Q%.d"',0
+.data:10004869 align 4
+.data:1000486C ; char aPutsOfileG0C13[]
+.data:1000486C aPutsOfileG0C13 db 'puts $ofile  "G0 C\133\043818+%.3lf'
+.data:1000486C db '\135"',0
+.data:10004895 align 4
+.data:10004898 ; char aPutsOfile043_0[]
+.data:10004898 aPutsOfile043_0 db 'puts $ofile  "\043812=\133\043600*\'
+.data:10004898 db '133%.8lf\135\135"',0
+.data:100048CD align 10h
+.data:100048D0 ; char aPutsOfile04381[]
+.data:100048D0 aPutsOfile04381 db 'puts $ofile  "\043810=\133\043600*\'
+.data:100048D0 db '133%.8lf\135\135"',0
+.data:10004905 align 4
+.data:10004908 ; char aPutsOfile04360[]
+.data:10004908 aPutsOfile04360 db 'puts $ofile  "\043600=\133\133\043\'
+.data:10004908 db '13360000+\0433020\135+299.862\135*\'
+.data:10004908 db '133%.8lf*2\135\135"',0
+.data:10004962 align 4
+.data:10004964 aPrev_pos db 'prev_pos',0
+.data:1000496D align 10h
+.data:10004970 aPlane_mill2_pr db 'PLANE_MILL2_PR',0
+.data:1000497F align 10h
+.data:10004980 ; char aMom_output__24[]
+.data:10004980 aMom_output__24 db 'MOM_output_literal "G68 X\133\04380'
+.data:10004980 db '0\135 Y\133\043801\135 Z0 I0 J1 K0 '
+.data:10004980 db 'R%.3lf"',0
+.data:100049CE align 10h
+.data:100049D0 ; char aMom_output__23[]
+.data:100049D0 aMom_output__23 db 'MOM_output_literal "G68 X\133\04380'
+.data:100049D0 db '0\135 Y\133\043801\135 Z0 I0 J0 K1 '
+.data:100049D0 db 'R\133-\043818\135"',0
+.data:10004A29 align 4
+.data:10004A2C ; char aMom_output__22[]
+.data:10004A2C aMom_output__22 db 'MOM_output_literal "G69"',0
+.data:10004A45 align 4
+.data:10004A48 ; char aMom_output__21[]
+.data:10004A48 aMom_output__21 db 'MOM_output_literal "G0 X%.3lf Y%.3l'
+.data:10004A48 db 'f"',0
+.data:10004A6E align 10h
+.data:10004A70 ; char aMom_output__20[]
+.data:10004A70 aMom_output__20 db 'MOM_output_literal "G68 X\133-\0438'
+.data:10004A70 db '10+\043800\135 Y\133\043801\135 Z\1'
+.data:10004A70 db '33-\043812\135 I0 J1 K0 R%.3lf"',0
+.data:10004AD6 align 4
+.data:10004AD8 ; char aMom_output__19[]
+.data:10004AD8 aMom_output__19 db 'MOM_output_literal "G68 X\133\04381'
+.data:10004AD8 db '0+\043800\135 Y\133\043801\135 Z\13'
+.data:10004AD8 db '3-\043812\135 I0 J1 K0 R%.3lf"',0
+.data:10004B3D align 10h
+.data:10004B40 ; char aMom_output__18[]
+.data:10004B40 aMom_output__18 db 'MOM_output_literal "G68 X\133\04381'
+.data:10004B40 db '0+\043800\135 Y\133\043801\135 Z\13'
+.data:10004B40 db '3-\043812\135 I0 J0 K1 R\133-\04381'
+.data:10004B40 db '8\135"',0
+.data:10004BB0 ; char aMom_output__17[]
+.data:10004BB0 aMom_output__17 db 'MOM_output_literal "G65 P9998 C\133'
+.data:10004BB0 db '\043818+%.3lf\135 Q0"',0
+.data:10004BE9 align 4
+.data:10004BEC ; char aMom_output__16[]
+.data:10004BEC aMom_output__16 db 'MOM_output_literal "G65 P9998 C\133'
+.data:10004BEC db '\043818+%.3lf\135 Q%.d"',0
+.data:10004C27 align 4
+.data:10004C28 ; char aMom_output__15[]
+.data:10004C28 aMom_output__15 db 'MOM_output_literal "G0 C\133\043818'
+.data:10004C28 db '+%.3lf\135"',0
+.data:10004C57 align 4
+.data:10004C58 ; char aMom_output__14[]
+.data:10004C58 aMom_output__14 db 'MOM_output_literal "\043812=\133\04'
+.data:10004C58 db '3600*\133%.8lf\135\135"',0
+.data:10004C93 align 4
+.data:10004C94 ; char aMom_output__13[]
+.data:10004C94 aMom_output__13 db 'MOM_output_literal "\043810=\133\04'
+.data:10004C94 db '3600*\133%.8lf\135\135"',0
+.data:10004CCF align 10h
+.data:10004CD0 ; char aMom_output__12[]
+.data:10004CD0 aMom_output__12 db 'MOM_output_literal "\043600=\133\13'
+.data:10004CD0 db '3\043\13360000+\0433020\135+299.862'
+.data:10004CD0 db '\135*\133%.8lf*2\135\135"',0
+.data:10004D30 aPlane_mill2 db 'PLANE_MILL2',0
+.data:10004D3C ; char aMom_output__11[]
+.data:10004D3C aMom_output__11 db 'MOM_output_literal "\043600=\133\13'
+.data:10004D3C db '3\043\13360000+\0433020\135+299.862'
+.data:10004D3C db '\135*\133%.8lf\135\135"',0
+.data:10004D9A align 4
+.data:10004D9C aG43_move db 'G43_MOVE',0
+.data:10004DA5 align 4
+.data:10004DA8 ; char aMom_output__10[]
+.data:10004DA8 aMom_output__10 db 'MOM_output_literal "G128 A%.3lf C%.'
+.data:10004DA8 db '3lf Q%.d"',0
+.data:10004DD5 align 4
+.data:10004DD8 aPlane_dynamic db 'PLANE_dynamic',0
+.data:10004DE6 align 4
+.data:10004DE8 ; char aMom_output_l_9[]
+.data:10004DE8 aMom_output_l_9 db 'MOM_output_literal "G65 P2223 A%.3l'
+.data:10004DE8 db 'f C%.3lf D%.3lf E%.3lf"',0
+.data:10004E23 align 4
+.data:10004E24 aPlane db 'PLANE',0
+.data:10004E2A align 4
+.data:10004E2C aP_num db 'P_num',0
+.data:10004E32 align 4
+.data:10004E34 aPrev_out_angle db 'prev_out_angle_pos',0
+.data:10004E47 align 4
+.data:10004E48 aG43_move_vor_0 db 'G43_MOVE_VORTEX_%',0
+.data:10004E5A align 4
+.data:10004E5C ; char aMom_output_l_8[]
+.data:10004E5C aMom_output_l_8 db 'MOM_output_literal "G90"',0
+.data:10004E75 align 4
+.data:10004E78 ; char aMom_output_l_7[]
+.data:10004E78 aMom_output_l_7 db 'MOM_output_literal "G43 G91 Z0 H%.d'
+.data:10004E78 db '"',0
+.data:10004E9D align 10h
+.data:10004EA0 ; char aMom_output_l_6[]
+.data:10004EA0 aMom_output_l_6 db 'MOM_output_literal "G49"',0
+.data:10004EB9 align 4
+.data:10004EBC ; char aMom_output_l_5[]
+.data:10004EBC aMom_output_l_5 db 'MOM_output_literal "G43.4 G0 X%.3lf'
+.data:10004EBC db ' Y%.3lf H%.d"',0
+.data:10004EED align 10h
+.data:10004EF0 aTool_number db 'tool_number',0
+.data:10004EFC aG43_move_vorte db 'G43_MOVE_VORTEX',0
+.data:10004F0C ; char aMom_output_l_4[]
+.data:10004F0C aMom_output_l_4 db 'MOM_output_literal "G68 X0 Y\133-\0'
+.data:10004F0C db '43602\135 Z\133-\043603\135 I1 J0 K'
+.data:10004F0C db '0 R%.3lf "',0
+.data:10004F5D align 10h
+.data:10004F60 aPos db 'pos',0
+.data:10004F64 ; char aMom_output_l_3[]
+.data:10004F64 aMom_output_l_3 db 'MOM_output_literal "G68 X\133\04360'
+.data:10004F64 db '0\135 Y0 Z\133-\043601\135 I0 J1 K0'
+.data:10004F64 db ' R%.3lf "',0
+.data:10004FB4 ; char aMom_output_l_2[]
+.data:10004FB4 aMom_output_l_2 db 'MOM_output_literal "\043603=\133\13'
+.data:10004FB4 db '3\043\1332000+\0431034\135+360.000\'
+.data:10004FB4 db '135*\1331-%.8lf\135\135"',0
+.data:10005013 align 4
+.data:10005014 ; char aMom_output_l_1[]
+.data:10005014 aMom_output_l_1 db 'MOM_output_literal "\043602=\133\13'
+.data:10005014 db '3\043\1332000+\0431034\135+360.000\'
+.data:10005014 db '135*\133%.8lf\135\135"',0
+.data:10005071 align 4
+.data:10005074 ; char aMom_output_l_0[]
+.data:10005074 aMom_output_l_0 db 'MOM_output_literal "\043601=\133\13'
+.data:10005074 db '3\043\1332000+\0431034\135+360.051\'
+.data:10005074 db '135*\1331-%.8lf\135\135"',0
+.data:100050D3 align 4
+.data:100050D4 ; char aMom_output_lit[]
+.data:100050D4 aMom_output_lit db 'MOM_output_literal "\043600=\133\13'
+.data:100050D4 db '3\043\1332000+\0431034\135+360.051\'
+.data:100050D4 db '135*\133%.8lf\135\135"',0
+.data:10005131 align 4
+.data:10005134 a2:
+.data:10005134 unicode 0, <2>,0
+.data:10005138 aMcs_goto db 'mcs_goto',0
+.data:10005141 align 4
+.data:10005144 a1:
+.data:10005144 unicode 0, <1>,0
+.data:10005148 aOut_angle_pos db 'out_angle_pos',0
+.data:10005156 align 4
+.data:10005158 a0:
+.data:10005158 unicode 0, <0>,0
+.data:1000515C aPlane_vortex db	'PLANE_VORTEX',0
+.data:10005169 align 4
+.data:1000516C ; char aArg0S[]
+.data:1000516C aArg0S db 'Arg 0 %s',0
+.data:10005175 align 4
+.data:10005178 ; char Format[]
+.data:10005178 Format db 'Number of args %ld',0
+.data:1000518B align 4
+.data:1000518C aAsRasx db 'Внимание!',0
+.data:10005196 align 4
+.data:10005198 dword_10005198 dd 0DD20C0CDh, 20CCCED2h,	0CEC1C0D0h, 20CCC5D7h
+.data:10005198 dd 0D2D1C5CCh, 0CECF20C5h, 0D0CFD2D1h, 0D1C5D6CEh
+.data:10005198 dd 20D0CED1h, 0CC20C5CDh, 0D2C5C6CEh, 0D2DBC120h
+.data:10005198 dd 0C0C720DCh, 0C5D9D3CFh, 0A0A0ACDh, 0EAF1EECCh
+.data:10005198 dd 202CE0E2h, 666F5343h,	0C7282074h, 2220CEC0h
+.data:10005198 dd 0EED1E8D1h, 2922F2F4h, 0E5D20A2Ch, 0EEF4E5EBh
+.data:10005198 dd 2B203AEDh, 34282037h,	20293539h, 2D333139h
+.data:10005198 dd 322D3232h, 0D4202C32h, 3AF1EAE0h, 20372B20h
+.data:10005198 dd 35393428h, 31392029h,	32322D33h, 0A31322Dh
+.data:10005198 dd 616D2D65h, 203A6C69h,	6172756Ah, 6F736340h
+.data:10005198 dd 722E7466h, 67202C75h,	69403030h, 786F626Eh
+.data:10005198 dd 2075722Eh, 5454480Ah,	68203A50h, 3A707474h
+.data:10005198 dd 77772F2Fh, 73632E77h,	2E74666Fh, 0A0A7572h
+.data:10005198 dd 20296328h, 37303032h,	0A0A0A2Eh, 0EBF1EECFh
+.data:10005198 dd 0FFEDE4E5h, 0E5F020FFh, 0F6EAE0E4h, 3220FFE8h
+.data:10005198 dd 383030h
+.data:1000528C dword_1000528C dd 0E7E5F0C2h
+.data:10005290 dword_10005290 dd 0E5E8EDE0h
+.data:10005294 byte_10005294 db	0
+.data:10005295 align 4
+.data:10005298 dword_10005298 dd 0EEE2F2CEh
+.data:1000529C word_1000529C dw	0E4h
+.data:1000529E align 10h
+.data:100052A0 ; char RootPathName[]
+.data:100052A0 RootPathName db 'C:\',0
+.data:100052A4 dd 4 dup(0)
+.data:100052B4 dword_100052B4 dd 0
+.data:100052B8 dword_100052B8 dd 0
+.data:100052BC dword_100052BC dd 0
+.data:100052C0 dword_100052C0 dd 0
+.data:100052C4 ; void *Memory
+.data:100052C4 Memory dd 0
+.data:100052C8 dword_100052C8 dd 0
+.data:100052CC align 200h
+.data:100052CC _data ends
+.data:100052CC
+.data:100052CC
+.data:100052CC end DllEntryPoint
